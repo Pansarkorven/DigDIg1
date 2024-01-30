@@ -37,6 +37,7 @@ public class PhysicsCharacterController : MonoBehaviour
     public int HP = 0; // HP fast typ inte
     public List<Sprite> CharacterSprites = new List<Sprite>();
     public SpriteRenderer mySpriteRenderer = null;
+    public Vector2 boxSize = new Vector2(0.5f, 2f);
 
 
 
@@ -44,7 +45,8 @@ public class PhysicsCharacterController : MonoBehaviour
 
     private void Update()
     {  // om hp är under noll så byts scen till game over
-        
+        if(Input.GetKeyDown(KeyCode.E))
+            CheckInteraction();
 
 
 
@@ -96,5 +98,20 @@ public class PhysicsCharacterController : MonoBehaviour
     }
 
 
+    private void CheckInteraction()
+    {
+        Collider2D[] colliders = Physics2D.OverlapBoxAll(transform.position, boxSize, 0);
+
+        foreach (Collider2D collider in colliders)
+        {
+            Interaction interactionComponent = collider.GetComponent<Interaction>();
+
+            if (interactionComponent != null)
+            {
+                interactionComponent.Interact();
+                return;
+            }
+        }
+    }
 
 }
