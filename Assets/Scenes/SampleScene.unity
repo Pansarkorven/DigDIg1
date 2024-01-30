@@ -133,7 +133,6 @@ GameObject:
   m_Component:
   - component: {fileID: 129415079}
   - component: {fileID: 129415078}
-  - component: {fileID: 129415077}
   - component: {fileID: 129415076}
   - component: {fileID: 129415075}
   m_Layer: 0
@@ -205,25 +204,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &129415077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 129415074}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13e7c64b71160bb4fa9cdf4b8caac317, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  jumpForce: 8
-  maxJumps: 1
-  groundCheck: {fileID: 878681351}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!212 &129415078
 SpriteRenderer:
   m_ObjectHideFlags: 0
