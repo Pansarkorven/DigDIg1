@@ -19,7 +19,7 @@ public class PlayerWallJump : MonoBehaviour
         {
             if (Input.GetButtonDown("Jump") && canWallJump)
             {
-                WallJump();
+                //WallJump();
             }
         }
     }
@@ -43,11 +43,9 @@ public class PlayerWallJump : MonoBehaviour
         canWallJump= false;
         StartCoroutine(WallJumpCooldown());
     }
-}
-
-private System.Collections.IEnumerator WallJumpCooldown()
-{
-    yield return new WaitForSeconds(wallJumpCooldown);
-    canWallJump = true;
-}
+    private System.Collections.IEnumerator WallJumpCooldown()
+    {
+        yield return new WaitForSeconds(wallJumpCooldown);
+        canWallJump = true;
+    }
 }
