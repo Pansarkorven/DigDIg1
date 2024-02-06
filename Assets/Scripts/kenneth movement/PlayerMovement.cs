@@ -8,16 +8,11 @@ public class PlayerMovement : MonoBehaviour
     private float speed = 8f;
     private float jumpingPower = 16f;
     private bool isFacingRight = true;
-
-    private bool isWallSliding;
-    private float wallSlidingSpeed = 2f;
-
+    public Vector2 boxSize = new Vector2(0.5f, 2f);
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
-    [SerializeField] private Transform wallCheck;
-    [SerializeField] private LayerMask wallLayer;
 
 
     // Update is called once per frame
@@ -35,37 +30,40 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
         }
 
-        WallSlide();
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            CheckInteraction();
+        }
+  
 
         Flip();
+
     }
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
     }
 
+    private void CheckInteraction()
+    {
+        Collider2D[] colliders = Physics2D.OverlapBoxAll(transform.position, boxSize, 0);
+
+        foreach (Collider2D collider in colliders)
+        {
+            Interaction interactionComponent = collider.GetComponent<Interaction>();
+
+            if (interactionComponent != null)
+            {
+                interactionComponent.Interact();
+                return;
+            }
+        }
+    }
     private bool IsGrounded()
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     }
 
-    private bool IsWalled()
-    {
-        return Physics2D.OverlapCircle(wallCheck.position, 0.2f, wallLayer);
-    }
-
-    private void WallSlide()
-    {
-        if (IsWalled() && !IsGrounded() && horizontal != 0f)
-        {
-            isWallSliding = true;
-            rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSlidingSpeed, float.MaxValue));
-        }
-        else
-        {
-            isWallSliding = false;
-        }
-    }
     private void Flip()
     {
       if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
