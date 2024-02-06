@@ -5,59 +5,90 @@ using UnityEngine;
 
 public class MovmentViktorTemp : MonoBehaviour
 {
-    public float moveSpeed = 5f;
-    public float jumpForce = 10f;
-    public Transform groundCheck;
-    public LayerMask groundLayer;
+    private float horizontal;
+    private float speed = 8f;
+    private float jumpingPower = 16f;
+    private bool isFacingRight = true;
+    public Vector2 boxSize = new Vector2(0.5f, 2f);
 
-    private Rigidbody2D rb;
-    private bool isGrounded;
-    private bool isMoving;
+    public Animator anim;
 
-    private Animator anim;
+    [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private LayerMask groundLayer;
 
 
-    void Start()
+    private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
+    // Update is called once per frame
     void Update()
     {
+        horizontal = Input.GetAxisRaw("Horizontal");
 
-        HandleMovement();
-        HandleJump();
-        UpdateGroundedStatus();
-    }
-
-    void HandleMovement()
-    {
-        float horizontalInput = Input.GetAxis("Horizontal");
-        Vector2 movement = new Vector2(horizontalInput * moveSpeed, rb.velocity.y);
-        rb.velocity = movement;
-
-        // Flip character sprite based on movement direction
-        if (horizontalInput < 0)
-            transform.localScale = new Vector3(-1, 1, 1);
-        else if (horizontalInput > 0)
-            transform.localScale = new Vector3(1, 1, 1);
-
-        isMoving = Mathf.Abs(horizontalInput) > 0.1f;
-    }
-
-    void HandleJump()
-    {
-        if (isGrounded && Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && IsGrounded())
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+        }
+
+        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            CheckInteraction();
+        }
+
+        if (horizontal != 0)
+        {
+            anim.SetBool("IsRunning", true);
+        }
+        else
+        {
+            anim.SetBool("IsRunning", false);
+        }
+
+
+        Flip();
+
+    }
+    private void FixedUpdate()
+    {
+        rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+    }
+
+    private void CheckInteraction()
+    {
+        Collider2D[] colliders = Physics2D.OverlapBoxAll(transform.position, boxSize, 0);
+
+        foreach (Collider2D collider in colliders)
+        {
+            Interaction interactionComponent = collider.GetComponent<Interaction>();
+
+            if (interactionComponent != null)
+            {
+                interactionComponent.Interact();
+                return;
+            }
         }
     }
-
-    void UpdateGroundedStatus()
+    private bool IsGrounded()
     {
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     }
 
-
-
+    private void Flip()
+    {
+        if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
+        {
+            isFacingRight = !isFacingRight;
+            Vector3 localScale = transform.localScale;
+            localScale.x *= -1f;
+            transform.localScale = localScale;
+        }
+    }
 }
