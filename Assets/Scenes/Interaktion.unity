@@ -743,11 +743,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 425e20ee4f1caaa4a83a406fb2f62de1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorObject: {fileID: 267695164}
-  openPositionY: 5
-  moveSpeed: 0.3
-  openSprite: {fileID: 21300000, guid: 830725a1738d4fe4e9545ffa364bff29, type: 3}
-  closedSprite: {fileID: 21300000, guid: 1b6ed8b42e20f684bbfdd3ed6a2d9c12, type: 3}
 --- !u!61 &1083364765
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1231,12 +1226,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56adcd45162df04418345cf883eebbc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boxSize: {x: 0.5, y: 2}
   rb: {fileID: 1375105156}
   groundCheck: {fileID: 1315407919}
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+  wallCheck: {fileID: 0}
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!114 &1375105160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1441,8 +1439,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff9ed0de1c4aa5a4e8c2594b8b4f1cd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  open: {fileID: 21300000, guid: f8429ee0736961d44b4eef7f63e8ecb3, type: 3}
-  closed: {fileID: 21300000, guid: 0860d07e50deb8546bf607f463e35b97, type: 3}
 --- !u!61 &1453912341
 BoxCollider2D:
   m_ObjectHideFlags: 0
