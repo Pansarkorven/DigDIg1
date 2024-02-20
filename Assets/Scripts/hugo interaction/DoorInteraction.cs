@@ -5,13 +5,13 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class OpenableDoor : Interaction
 {
-    public GameObject doorObject;
-    public float openPositionY = 2.0f;
+    public GameObject doorObject; // referäns till dörren
+    public float openPositionY = 2.0f; // hur långt dörren ska röra sig
     public float moveSpeed = 0.2f; // fart
-    public Sprite openSprite;
-    public Sprite closedSprite;
+    public Sprite openSprite; // sprite för öppem
+    public Sprite closedSprite; // sprite för stängd
 
-    private SpriteRenderer spriteRenderer;
+    private SpriteRenderer spriteRenderer; 
     private BoxCollider2D doorCollider; 
     private bool canMove = true;
 
@@ -46,7 +46,7 @@ public class OpenableDoor : Interaction
         }
         else
         {
-            Debug.LogError("jävla mongo dörren e borta");
+            Debug.LogError("dörren är borta");
         }
     }
 

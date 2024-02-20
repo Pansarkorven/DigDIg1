@@ -28,7 +28,7 @@ public class KeyDoor : Interaction
             }
             else
             {
-                Debug.Log("hämta nyckel din lilla jävla orangutang");
+                Debug.Log("du har ej nyckeln");
             }
         }
     }
