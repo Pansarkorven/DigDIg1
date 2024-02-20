@@ -5,6 +5,7 @@ using UnityEngine;
 public class MeleeAttack : MonoBehaviour
 {
     public Transform attackPoint;
+    public Transform attackPointUp;
     public LayerMask enemyLayer;
     public float attackRange = 0.5f;
     public int attackDamage = 1;
@@ -22,17 +23,23 @@ public class MeleeAttack : MonoBehaviour
         {
             PerformAttack();
         }
+        if (Input.GetKeyDown(KeyCode.W)) 
+        {
+            PreformAttackUp(); 
+        }
     }
 
     void PerformAttack()
     {
-        // Trigger the attack animation
-        animator.SetTrigger("Attack");
+       
+        
 
         // Perform the melee attack based on the character's direction
         if (IsFacingRight())
         {
             AttackSide();
+            // Trigger the attack animation
+            animator.SetTrigger("Attack");
         }
         else
         {
@@ -40,8 +47,18 @@ public class MeleeAttack : MonoBehaviour
         }
 
         // Perform the melee attack upwards
-        AttackUp();
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            AttackUp();
+            animator.SetTrigger("AttackUp");
+        }
     }
+    void PreformAttackUp()
+    {
+        AttackUp();
+        animator.SetTrigger("AttackUp");
+    }
+
 
     void AttackSide()
     {
@@ -55,8 +72,13 @@ public class MeleeAttack : MonoBehaviour
 
     void AttackUp()
     {
-        // Implement attacking upwards logic here
-        // You can use OverlapCircle or OverlapBox to detect enemies above the character
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPointUp.position, attackRange, enemyLayer);
+
+        foreach (Collider2D enemy in hitEnemies)
+        {
+            enemy.GetComponent<EnemyHealth>().TakeDamage(attackDamage);
+        }
+        Debug.Log("slår up");
     }
 
     bool IsFacingRight()
@@ -67,8 +89,16 @@ public class MeleeAttack : MonoBehaviour
     void OnDrawGizmosSelected()
     {
         if (attackPoint == null)
+        {
             return;
+        }
+            
+        if (attackPointUp == null)
+        {
+            return;
+        }
 
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+        Gizmos.DrawWireSphere(attackPointUp.position, attackRange);
     }
 }
