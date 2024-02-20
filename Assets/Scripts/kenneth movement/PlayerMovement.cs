@@ -3,8 +3,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private float horizontal;
-    private bool isRunning = false; // Flag to indicate if the player is running
-    private float speed = 8f;
+    public bool isRunning = false; // Flag to indicate if the player is running
     private float runningSpeed = 12f; // Speed when running
     private float walkingSpeed = 8f; // Speed when walking
     private float jumpingPower = 16f;
