@@ -3,12 +3,12 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private float horizontal;
-    private bool isRunning = false; // indikation ifall om spelaren springer
-    private float runningSpeed = 12f; // farten när spelaren springer
-    private float walkingSpeed = 8f; // farten när spelaren går vanligt
-    private float jumpingPower = 16f; // hur långt han hoppar
-    private bool isFacingRight = true; // indikation om vilket håll spelaren är åt
-    public Vector2 boxSize = new Vector2(0.5f, 2f); // storlek på interaktion avståndet för objekt
+    public bool isRunning = false; // Flag to indicate if the player is running
+    private float runningSpeed = 12f; // Speed when running
+    private float walkingSpeed = 8f; // Speed when walking
+    private float jumpingPower = 16f;
+    private bool isFacingRight = true;
+    public Vector2 boxSize = new Vector2(0.5f, 2f);
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontal = Input.GetAxisRaw("Horizontal");
 
-        // växla mellan att springa och att gå
+        // Toggle running
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             isRunning = true;
@@ -39,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
         }
 
-        if (Input.GetKeyDown(KeyCode.E)) // ifall spelaren använder något
+        if (Input.GetKeyDown(KeyCode.E))
         {
             CheckInteraction();
         }
