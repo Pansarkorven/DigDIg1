@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
         {
             isRunning = true;
         }
-        else if (Input.GetKeyUp(KeyCode.LeftShift))
+        else if (!Input.GetKey(KeyCode.LeftShift))
         {
             isRunning = false;
         }
