@@ -6,7 +6,7 @@ using UnityEngine;
 public class MovmentViktorTemp : MonoBehaviour
 {
     private float horizontal;
-    private float speed = 8f;
+    public float speed = 15f;
     private float jumpingPower = 16f;
     private bool isFacingRight = true;
     public Vector2 boxSize = new Vector2(0.5f, 2f);
