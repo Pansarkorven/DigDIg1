@@ -31,7 +31,7 @@ public class StaminaBar : MonoBehaviour
     void Update()
     {
 
-        Debug.Log(playerMove.isRunning);
+        //Debug.Log(playerMove.isRunning);
 
 
         if (Input.GetKey(KeyCode.LeftShift) && playerMove.isRunning) // Check if running is allowed and character is moving
