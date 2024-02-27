@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 1
+  spritePixelsToUnits: 190
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,11 +113,11 @@ TextureImporter:
       name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_0"
       rect:
         serializedVersion: 2
-        x: 0
+        x: 10
         y: 212
-        width: 58
-        height: 53
-      alignment: 0
+        width: 17
+        height: 40
+      alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -134,11 +134,11 @@ TextureImporter:
       name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_1"
       rect:
         serializedVersion: 2
-        x: 58
+        x: 68
         y: 212
-        width: 58
-        height: 53
-      alignment: 0
+        width: 17
+        height: 40
+      alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -155,11 +155,11 @@ TextureImporter:
       name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_2"
       rect:
         serializedVersion: 2
-        x: 116
+        x: 126
         y: 212
-        width: 58
-        height: 53
-      alignment: 0
+        width: 17
+        height: 40
+      alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -176,11 +176,11 @@ TextureImporter:
       name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_3"
       rect:
         serializedVersion: 2
-        x: 174
+        x: 184
         y: 212
-        width: 58
-        height: 53
-      alignment: 0
+        width: 17
+        height: 40
+      alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -197,11 +197,11 @@ TextureImporter:
       name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_4"
       rect:
         serializedVersion: 2
-        x: 232
+        x: 242
         y: 212
-        width: 58
-        height: 53
-      alignment: 0
+        width: 17
+        height: 41
+      alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -218,11 +218,11 @@ TextureImporter:
       name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_5"
       rect:
         serializedVersion: 2
-        x: 290
+        x: 300
         y: 212
-        width: 58
-        height: 53
-      alignment: 0
+        width: 17
+        height: 41
+      alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -239,11 +239,11 @@ TextureImporter:
       name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_6"
       rect:
         serializedVersion: 2
-        x: 348
-        y: 212
-        width: 58
-        height: 53
-      alignment: 0
+        x: 352
+        y: 211
+        width: 25
+        height: 41
+      alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -260,11 +260,11 @@ TextureImporter:
       name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_7"
       rect:
         serializedVersion: 2
-        x: 406
+        x: 416
         y: 212
-        width: 58
-        height: 53
-      alignment: 0
+        width: 17
+        height: 40
+      alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -281,11 +281,11 @@ TextureImporter:
       name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_8"
       rect:
         serializedVersion: 2
-        x: 0
+        x: 9
         y: 159
-        width: 58
-        height: 53
-      alignment: 0
+        width: 18
+        height: 40
+      alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -302,11 +302,11 @@ TextureImporter:
       name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_9"
       rect:
         serializedVersion: 2
-        x: 58
+        x: 69
         y: 159
-        width: 58
-        height: 53
-      alignment: 0
+        width: 44
+        height: 36
+      alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -323,11 +323,11 @@ TextureImporter:
       name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_10"
       rect:
         serializedVersion: 2
-        x: 116
+        x: 121
         y: 159
-        width: 58
-        height: 53
-      alignment: 0
+        width: 39
+        height: 38
+      alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -344,11 +344,11 @@ TextureImporter:
       name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_11"
       rect:
         serializedVersion: 2
-        x: 174
+        x: 181
         y: 159
-        width: 58
-        height: 53
-      alignment: 0
+        width: 20
+        height: 40
+      alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -365,11 +365,11 @@ TextureImporter:
       name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_12"
       rect:
         serializedVersion: 2
-        x: 232
+        x: 241
         y: 159
-        width: 58
-        height: 53
-      alignment: 0
+        width: 18
+        height: 40
+      alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -386,11 +386,11 @@ TextureImporter:
       name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_13"
       rect:
         serializedVersion: 2
-        x: 290
+        x: 292
         y: 159
-        width: 58
-        height: 53
-      alignment: 0
+        width: 28
+        height: 51
+      alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -407,11 +407,11 @@ TextureImporter:
       name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_14"
       rect:
         serializedVersion: 2
-        x: 348
+        x: 350
         y: 159
-        width: 58
-        height: 53
-      alignment: 0
+        width: 28
+        height: 51
+      alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -425,35 +425,14 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_15"
-      rect:
-        serializedVersion: 2
-        x: 406
-        y: 159
-        width: 58
-        height: 53
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4d04b1e6648a33c49a574121fd33c795
-      internalID: 1171622088
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_16"
       rect:
         serializedVersion: 2
-        x: 0
-        y: 106
-        width: 58
-        height: 53
-      alignment: 0
+        x: 412
+        y: 159
+        width: 21
+        height: 40
+      alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -470,11 +449,11 @@ TextureImporter:
       name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_17"
       rect:
         serializedVersion: 2
-        x: 58
+        x: 12
         y: 106
-        width: 58
-        height: 53
-      alignment: 0
+        width: 20
+        height: 40
+      alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -491,11 +470,11 @@ TextureImporter:
       name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_18"
       rect:
         serializedVersion: 2
-        x: 116
+        x: 69
         y: 106
-        width: 58
-        height: 53
-      alignment: 0
+        width: 24
+        height: 39
+      alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -512,11 +491,11 @@ TextureImporter:
       name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_19"
       rect:
         serializedVersion: 2
-        x: 174
-        y: 106
-        width: 58
-        height: 53
-      alignment: 0
+        x: 127
+        y: 109
+        width: 25
+        height: 38
+      alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -533,11 +512,11 @@ TextureImporter:
       name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_20"
       rect:
         serializedVersion: 2
-        x: 232
+        x: 188
         y: 106
-        width: 58
-        height: 53
-      alignment: 0
+        width: 21
+        height: 38
+      alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -554,11 +533,11 @@ TextureImporter:
       name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_21"
       rect:
         serializedVersion: 2
-        x: 290
+        x: 245
         y: 106
-        width: 58
-        height: 53
-      alignment: 0
+        width: 17
+        height: 38
+      alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -575,11 +554,11 @@ TextureImporter:
       name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_22"
       rect:
         serializedVersion: 2
-        x: 348
+        x: 302
         y: 106
-        width: 58
-        height: 53
-      alignment: 0
+        width: 17
+        height: 40
+      alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -596,11 +575,11 @@ TextureImporter:
       name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_23"
       rect:
         serializedVersion: 2
-        x: 406
-        y: 106
-        width: 58
-        height: 53
-      alignment: 0
+        x: 359
+        y: 109
+        width: 21
+        height: 38
+      alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -617,11 +596,11 @@ TextureImporter:
       name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_24"
       rect:
         serializedVersion: 2
-        x: 0
-        y: 53
-        width: 58
-        height: 53
-      alignment: 0
+        x: 419
+        y: 106
+        width: 17
+        height: 40
+      alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -638,11 +617,11 @@ TextureImporter:
       name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_25"
       rect:
         serializedVersion: 2
-        x: 58
+        x: 10
         y: 53
-        width: 58
-        height: 53
-      alignment: 0
+        width: 17
+        height: 40
+      alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -659,11 +638,11 @@ TextureImporter:
       name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_26"
       rect:
         serializedVersion: 2
-        x: 116
+        x: 66
         y: 53
-        width: 58
-        height: 53
-      alignment: 0
+        width: 18
+        height: 41
+      alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -680,11 +659,11 @@ TextureImporter:
       name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_27"
       rect:
         serializedVersion: 2
-        x: 174
+        x: 127
         y: 53
-        width: 58
-        height: 53
-      alignment: 0
+        width: 17
+        height: 41
+      alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -701,11 +680,11 @@ TextureImporter:
       name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_28"
       rect:
         serializedVersion: 2
-        x: 232
+        x: 186
         y: 53
-        width: 58
-        height: 53
-      alignment: 0
+        width: 17
+        height: 41
+      alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -722,11 +701,11 @@ TextureImporter:
       name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_29"
       rect:
         serializedVersion: 2
-        x: 290
+        x: 245
         y: 53
-        width: 58
-        height: 53
-      alignment: 0
+        width: 17
+        height: 37
+      alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -743,11 +722,11 @@ TextureImporter:
       name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_30"
       rect:
         serializedVersion: 2
-        x: 348
+        x: 302
         y: 53
-        width: 58
-        height: 53
-      alignment: 0
+        width: 20
+        height: 25
+      alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -764,11 +743,11 @@ TextureImporter:
       name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_31"
       rect:
         serializedVersion: 2
-        x: 406
+        x: 360
         y: 53
-        width: 58
-        height: 53
-      alignment: 0
+        width: 20
+        height: 28
+      alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -785,11 +764,11 @@ TextureImporter:
       name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_32"
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 58
-        height: 53
-      alignment: 0
+        x: 418
+        y: 53
+        width: 20
+        height: 28
+      alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -806,11 +785,11 @@ TextureImporter:
       name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_33"
       rect:
         serializedVersion: 2
-        x: 58
+        x: 12
         y: 0
-        width: 58
-        height: 53
-      alignment: 0
+        width: 23
+        height: 25
+      alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -827,11 +806,11 @@ TextureImporter:
       name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_34"
       rect:
         serializedVersion: 2
-        x: 116
+        x: 70
         y: 0
-        width: 58
-        height: 53
-      alignment: 0
+        width: 31
+        height: 20
+      alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -848,11 +827,11 @@ TextureImporter:
       name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_35"
       rect:
         serializedVersion: 2
-        x: 174
+        x: 128
         y: 0
-        width: 58
-        height: 53
-      alignment: 0
+        width: 39
+        height: 6
+      alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -869,11 +848,11 @@ TextureImporter:
       name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_36"
       rect:
         serializedVersion: 2
-        x: 232
+        x: 186
         y: 0
-        width: 58
-        height: 53
-      alignment: 0
+        width: 33
+        height: 7
+      alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -890,11 +869,11 @@ TextureImporter:
       name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_37"
       rect:
         serializedVersion: 2
-        x: 290
-        y: 0
-        width: 58
-        height: 53
-      alignment: 0
+        x: 221
+        y: 1
+        width: 6
+        height: 5
+      alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -911,11 +890,11 @@ TextureImporter:
       name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_38"
       rect:
         serializedVersion: 2
-        x: 348
+        x: 242
         y: 0
-        width: 58
-        height: 53
-      alignment: 0
+        width: 45
+        height: 8
+      alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -924,6 +903,48 @@ TextureImporter:
       bones: []
       spriteID: 7de344a8baeb62f47a35d2016cbb3705
       internalID: 1905776509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_39"
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 1
+        width: 17
+        height: 43
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c45dce7767331d4793a5b5b1eafd681
+      internalID: -843207804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_40"
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 1
+        width: 15
+        height: 39
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c943a8c7a52037a42bb190ead1f18a67
+      internalID: -125534207
       vertices: []
       indices: 
       edges: []
@@ -972,7 +993,9 @@ TextureImporter:
       "digitaltskapande_huvudkarakt\xE4r_Spritesheet_36": -795582562
       "digitaltskapande_huvudkarakt\xE4r_Spritesheet_37": 1457820319
       "digitaltskapande_huvudkarakt\xE4r_Spritesheet_38": 1905776509
+      "digitaltskapande_huvudkarakt\xE4r_Spritesheet_39": -843207804
       "digitaltskapande_huvudkarakt\xE4r_Spritesheet_4": -1751691069
+      "digitaltskapande_huvudkarakt\xE4r_Spritesheet_40": -125534207
       "digitaltskapande_huvudkarakt\xE4r_Spritesheet_5": -600659391
       "digitaltskapande_huvudkarakt\xE4r_Spritesheet_6": -1759897397
       "digitaltskapande_huvudkarakt\xE4r_Spritesheet_7": -2136801263

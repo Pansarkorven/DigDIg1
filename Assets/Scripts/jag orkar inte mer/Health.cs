@@ -19,8 +19,8 @@ public class Health : MonoBehaviour
 
         if(CurrentHealth <= 0)  
         {
-            Debug.Log("dead.");
-          //  Animation.SetBool("IsDead", true);
+            Debug.Log(" du dog noob ");
+          Animation.SetBool("IsDead", true);
         }
     }
 

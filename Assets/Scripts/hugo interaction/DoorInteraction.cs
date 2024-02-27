@@ -15,26 +15,26 @@ public class OpenableDoor : Interaction
     private BoxCollider2D doorCollider; 
     private bool canMove = true;
 
-    public override void Interact()
+    public override void Interact() //
     {
         if (canMove)
         {
-            StartCoroutine(MoveDoor());
+            StartCoroutine(MoveDoor()); // vid interact öppna dörren
         }
     }
 
-    private IEnumerator MoveDoor()
+    private IEnumerator MoveDoor() // det här är vad öppna dörren innebär
     {
         if (doorObject != null)
         {
             canMove = false;
 
-            Vector3 initialPosition = doorObject.transform.position;
-            Vector3 targetPosition = new Vector3(initialPosition.x, initialPosition.y + openPositionY, initialPosition.z);
+            Vector3 initialPosition = doorObject.transform.position; // startar position
+            Vector3 targetPosition = new Vector3(initialPosition.x, initialPosition.y + openPositionY, initialPosition.z); // target positionen
 
-            float elapsedTime = 0f;
+            float elapsedTime = 0f; // tid
 
-            while (elapsedTime < 1f)
+            while (elapsedTime < 1f) // hur länge innan dörren ska sluta röra sig
             {
                 doorObject.transform.position = Vector3.Lerp(initialPosition, targetPosition, elapsedTime);
                 spriteRenderer.sprite = openSprite; // byt sprite vid movement

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Spik : MonoBehaviour
 {
     private int damageCount = 0;
-    public int maxDamageCount = 3; // Set the maximum number of allowed damages
+    public int maxDamageCount = 3; // max användingar av spiken
 
     // Start is called before the first frame update
     void Start()
@@ -15,16 +15,16 @@ public class Spik : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player")) // om objektet som nuddar har player taggen
         {
             var HealthComponent = collision.gameObject.GetComponent<Health>();
             if (HealthComponent != null)
             {
                 HealthComponent.TakeDamage(1);
-                damageCount++; // Increment damage count
+                damageCount++; // i = i + 1
                 if (damageCount >= maxDamageCount)
                 {
-                    Destroy(gameObject); // Destroy the Spik object if damage count reaches the limit
+                    Destroy(gameObject); // lägg vad du vill ska hända
                 }
             }
         }
