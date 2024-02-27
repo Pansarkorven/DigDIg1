@@ -65,12 +65,30 @@ public class StaminaBar : MonoBehaviour
 
     private void IncreaseEnergy()
     {
-        if (stamina < maxStamina) // Add condition to check if stamina is less than maxStamina
+        if (stamina < maxStamina && !isCooldown) // Add condition to check if stamina is less than maxStamina and not in cooldown
+        {
             stamina += dValue * Time.deltaTime;
-        if (stamina > maxStamina) // Ensure stamina doesn't exceed maxStamina
-            stamina = maxStamina;
-        if (stamina > 0)
-            playerMove.isRunning = true; // Enable running when stamina is restored
+            if (stamina > maxStamina) // Ensure stamina doesn't exceed maxStamina
+                stamina = maxStamina;
+
+            if (stamina > 0)
+                playerMove.isRunning = true; // Enable running when stamina is restored
+            else
+                playerMove.isRunning = false; // Disable running when stamina is zero
+        }
+        else
+        {
+            playerMove.isRunning = false; // Disable running when in cooldown or stamina is already at max
+        }
+
+        if (Input.GetKey(KeyCode.LeftShift) && playerMove.isRunning && stamina > 0)
+        {
+            playerMove.isRunning = true; // Enable running only when left shift is pressed down, character is moving, and stamina is greater than zero
+        }
+        else
+        {
+            playerMove.isRunning = false; // Disable running in other cases
+        }
     }
 
     private void ActivateCooldown()

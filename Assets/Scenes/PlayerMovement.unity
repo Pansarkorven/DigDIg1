@@ -1492,10 +1492,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfd56657e080f2a4680f4f98fba99644, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stamina: 10
+  stamina: 5
   cooldownTime: 2
   staminaBar: {fileID: 1448964437}
-  dValue: 4
+  dValue: 3
 --- !u!1 &1658023664
 GameObject:
   m_ObjectHideFlags: 0
