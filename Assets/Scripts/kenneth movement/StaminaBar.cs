@@ -34,13 +34,16 @@ public class StaminaBar : MonoBehaviour
         //Debug.Log(playerMove.isRunning);
 
 
-        if (Input.GetKey(KeyCode.LeftShift) && playerMove.isRunning) // Check if running is allowed and character is moving
+        if (!Input.GetKey(KeyCode.LeftShift) || !playerMove.isRunning) // Check if running is allowed and character is moving
+        {
+            if (stamina < maxStamina && !isCooldown) // Only increase stamina if not in cooldown
+                IncreaseEnergy();
+        }
+        else
         {
             isCooldown = false; // Reset cooldown when left shift is pressed
             DecreaseEnergy();
         }
-        else if (stamina < maxStamina && !isCooldown) // Only increase stamina if not in cooldown
-            IncreaseEnergy();
 
         staminaBar.value = stamina;
 
