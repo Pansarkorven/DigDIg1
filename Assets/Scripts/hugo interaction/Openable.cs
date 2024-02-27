@@ -15,9 +15,9 @@ public class Openable : Interaction
     public override void Interact()
     {
         if (isOpen)
-            baj.sprite = closed;
+            baj.sprite = closed; // programmera vad som ska hända
         else
-            baj.sprite = open;
+            baj.sprite = open; // programmera vad som ska hända
 
         isOpen = !isOpen;
     }

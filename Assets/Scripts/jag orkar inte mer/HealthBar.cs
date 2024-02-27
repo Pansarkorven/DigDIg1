@@ -9,13 +9,13 @@ public class HealthBar : MonoBehaviour
     public Image healthBarImage;
 
 
-    public Sprite sprite1;
-    public Sprite sprite2;
-    public Sprite sprite3;
-    public Sprite sprite4;
+    public Sprite sprite1; // eld animationen
+    public Sprite sprite2; // eld animationen
+    public Sprite sprite3; // eld animationen
+    public Sprite sprite4; // eld animationen
 
     public float spriteInterval = 1f;
-    public float healthUpdateInterval = 1f;
+    public float healthUpdateInterval = 1f; // varje sekund uppdatera hp
 
     private float spriteTimer = 0f;
     private float healthTimer = 0f;

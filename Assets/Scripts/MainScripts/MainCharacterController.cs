@@ -6,9 +6,9 @@ public class MainCharacterController : MonoBehaviour
 {
     private float horizontal;
     public bool isRunning = false; // Flag to indicate if the player is running
-    private float runningSpeed = 12f; // Speed when running
-    private float walkingSpeed = 8f; // Speed when walking
-    private float jumpingPower = 16f;
+    public float runningSpeed = 12f; // Speed when running
+    public float walkingSpeed = 8f; // Speed when walking
+    public float jumpingPower = 16f;
     private bool isFacingRight = true;
     public Vector2 boxSize = new Vector2(0.5f, 2f);
 
