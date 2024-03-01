@@ -44,6 +44,7 @@ public class MeleeAttack : MonoBehaviour
         else
         {
             AttackSide(); // You can replace this with a different animation for attacking to the left
+            animator.SetTrigger("Attack");
         }
 
         // Perform the melee attack upwards
