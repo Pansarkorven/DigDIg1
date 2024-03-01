@@ -25,7 +25,7 @@ public class EnemyHealth : MonoBehaviour
     void Die()
     {
         // Perform death actions here
-        //Destroy(gameObject);
+        Destroy(gameObject);
         Debug.Log("jag dog why");
     }
 }

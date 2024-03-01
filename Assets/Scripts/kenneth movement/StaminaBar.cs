@@ -15,7 +15,7 @@ public class StaminaBar : MonoBehaviour
 
     private Vector3 lastPosition; // Store the last position to check movement
 
-    PlayerMovement playerMove;
+    MainCharacterController playerMove;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +24,7 @@ public class StaminaBar : MonoBehaviour
         staminaBar.maxValue = maxStamina;
         lastPosition = transform.position;
 
-        playerMove = FindObjectOfType<PlayerMovement>().GetComponent<PlayerMovement>();
+        playerMove = FindObjectOfType<MainCharacterController>().GetComponent<MainCharacterController>();
     }
 
     // Update is called once per frame

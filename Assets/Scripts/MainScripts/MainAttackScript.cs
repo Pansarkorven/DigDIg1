@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeleeAttack : MonoBehaviour
+public class MainAttackScript : MonoBehaviour
 {
     public Transform attackPoint;
     public Transform attackPointUp;
@@ -23,16 +23,16 @@ public class MeleeAttack : MonoBehaviour
         {
             PerformAttack();
         }
-        if (Input.GetKeyDown(KeyCode.W)) 
+        if (Input.GetKeyDown(KeyCode.W))
         {
-            PreformAttackUp(); 
+            PreformAttackUp();
         }
     }
 
     void PerformAttack()
     {
-       
-        
+
+
 
         // Perform the melee attack based on the character's direction
         if (IsFacingRight())
@@ -93,7 +93,7 @@ public class MeleeAttack : MonoBehaviour
         {
             return;
         }
-            
+
         if (attackPointUp == null)
         {
             return;

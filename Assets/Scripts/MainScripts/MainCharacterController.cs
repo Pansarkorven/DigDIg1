@@ -6,25 +6,24 @@ public class MainCharacterController : MonoBehaviour
 {
     private float horizontal;
     public bool isRunning = false; // Flag to indicate if the player is running
-    public float runningSpeed = 12f; // Speed when running
-    public float walkingSpeed = 8f; // Speed when walking
-    public float jumpingPower = 16f;
-    private bool isFacingRight = true;
+    private float runningSpeed = 12f; // Speed when running
+    private float walkingSpeed = 8f; // Speed when walking
+    private float jumpingPower = 16f;
+    public bool isFacingRight = true;
     public Vector2 boxSize = new Vector2(0.5f, 2f);
 
-    public Animator anim;
+    public Animator Anim;
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
 
+    // Update is called once per frame
 
     private void Start()
     {
-        anim = GetComponent<Animator>();
+        Anim = GetComponent<Animator>();
     }
-
-    // Update is called once per frame
     void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
@@ -56,11 +55,11 @@ public class MainCharacterController : MonoBehaviour
 
         if (horizontal != 0)
         {
-            anim.SetBool("IsRunning", true);
+            Anim.SetBool("IsRunning", true);
         }
         else
         {
-            anim.SetBool("IsRunning", false);
+            Anim.SetBool("IsRunning", false);
         }
 
         Flip();
