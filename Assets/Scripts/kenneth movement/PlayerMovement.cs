@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     private float runningSpeed = 12f; // Speed when running
     private float walkingSpeed = 8f; // Speed when walking
     private float jumpingPower = 16f;
-    private bool isFacingRight = true;
+    public bool isFacingRight = true;
     public Vector2 boxSize = new Vector2(0.5f, 2f);
 
     [SerializeField] private Rigidbody2D rb;
