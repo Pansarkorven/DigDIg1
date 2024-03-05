@@ -21,7 +21,7 @@ public class Health : MonoBehaviour
         if (CurrentHealth <= 0)
         {
             Debug.Log(" du dog noob ");
-            Animation.SetBool("IsDead", true);
+            //Animation.SetBool("IsDead", true);
             Player.GetComponent<MainCharacterController>().enabled = false;
             StartCoroutine(LoadDeathScreenAfterDelay(4f)); // Start the coroutine to delay scene loading
         }
