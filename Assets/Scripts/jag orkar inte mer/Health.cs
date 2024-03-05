@@ -23,7 +23,7 @@ public class Health : MonoBehaviour
             Debug.Log(" du dog noob ");
             //Animation.SetBool("IsDead", true);
             Player.GetComponent<MainCharacterController>().enabled = false;
-            StartCoroutine(LoadDeathScreenAfterDelay(4f)); // Start the coroutine to delay scene loading
+            StartCoroutine(LoadDeathScreenAfterDelay(2f)); // Start the coroutine to delay scene loading
         }
     }
 
