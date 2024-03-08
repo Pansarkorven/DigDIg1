@@ -11,6 +11,7 @@ public class MainCharacterController : MonoBehaviour
     private float jumpingPower = 16f;
     public bool isFacingRight = true;
     public Vector2 boxSize = new Vector2(0.5f, 2f);
+    public float flipDistance = 0.1f;
 
     public Animator Anim;
 
@@ -95,12 +96,32 @@ public class MainCharacterController : MonoBehaviour
 
     private void Flip()
     {
-        if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
+        if ((isFacingRight && horizontal < 0f) || (!isFacingRight && horizontal > 0f))
         {
             isFacingRight = !isFacingRight;
+
+            // Store the current position
+            Vector3 currentPosition = transform.position;
+
+            // Flip the scale
             Vector3 localScale = transform.localScale;
             localScale.x *= -1f;
             transform.localScale = localScale;
+
+            // Adjust the position to reflect the flip
+            // Adjust this value based on how much you want the character to move when flipping
+            transform.position = new Vector3(currentPosition.x + (isFacingRight ? flipDistance : -flipDistance), currentPosition.y, currentPosition.z);
         }
     }
+
+    //private void Flip()
+    //{
+    //    if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
+    //    {
+    //        isFacingRight = !isFacingRight;
+    //        Vector3 localScale = transform.localScale;
+    //        localScale.x *= -1f;
+    //        transform.localScale = localScale;
+    //    }
+    //}
 }

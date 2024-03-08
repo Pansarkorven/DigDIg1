@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class MeleeAttack : MonoBehaviour
 {
-    public Transform attackPoint;
-    public Transform attackPointUp;
-    public LayerMask enemyLayer;
     public float attackRange = 0.5f;
     public int attackDamage = 1;
+
+    public LayerMask enemyLayer;
+
+    public Transform attackPoint;
+    public Transform attackPointUp;
 
     public Animator animator;
 
@@ -23,16 +25,14 @@ public class MeleeAttack : MonoBehaviour
         {
             PerformAttack();
         }
-        if (Input.GetKeyDown(KeyCode.W)) 
+        if (Input.GetKeyDown(KeyCode.W))
         {
-            PreformAttackUp(); 
+            PreformAttackUp();
         }
     }
 
     void PerformAttack()
     {
-       
-        
 
         // Perform the melee attack based on the character's direction
         if (IsFacingRight())
@@ -93,7 +93,7 @@ public class MeleeAttack : MonoBehaviour
         {
             return;
         }
-            
+
         if (attackPointUp == null)
         {
             return;
