@@ -121,7 +121,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 511
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49ecf60bf8c761e4f9bd9c1e196f4809, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilespeed: 2
+  projectileSpeed: 5
 --- !u!50 &-7515287426713007367
 Rigidbody2D:
   serializedVersion: 4

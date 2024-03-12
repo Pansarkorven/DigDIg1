@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Ranged : MonoBehaviour
+public class Armor : MonoBehaviour
 {
     public Sprite sprite1;
     public Sprite sprite2;
@@ -10,7 +10,7 @@ public class Ranged : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Sprite[] sprites;
     private int currentIndex = 0;
-    private int direction = 1; // 1 för framåt, -1 för bakåt
+    private int direction = 1; // 1 for forward, -1 for backward
     public float cycleTime = 0.15f;
 
     private void Start()
@@ -33,7 +33,7 @@ public class Ranged : MonoBehaviour
     {
         currentIndex += direction;
 
-        // Om den har nått slutet i "cyclen" så kommer den "cycla" tillbaka så det går som 1, 2, 3, 4, 3, 2, 1 istället för 1, 2, 3, 4, 1, 2, 3, 4
+        // If reached the end of sprites array, change direction
         if (currentIndex >= sprites.Length)
         {
             currentIndex = sprites.Length - 2;
@@ -48,7 +48,7 @@ public class Ranged : MonoBehaviour
         spriteRenderer.sprite = sprites[currentIndex];
     }
 
-    // själv välja sprites 
+    // Function to manually assign sprites from Unity Editor
     public void AssignSprites(Sprite[] newSprites)
     {
         sprites = newSprites;
@@ -57,6 +57,10 @@ public class Ranged : MonoBehaviour
             spriteRenderer.sprite = sprites[currentIndex];
             CancelInvoke("CycleSprites");
             InvokeRepeating("CycleSprites", cycleTime, cycleTime);
+        }
+        else
+        {
+            Debug.LogError("No sprites assigned to SpriteCycler.");
         }
     }
 
@@ -69,7 +73,7 @@ public class Ranged : MonoBehaviour
 
             if (PlayerInventory != null)
             {
-                PlayerInventory.AddArmor(); // lägg skyddet i inventory (value)
+                PlayerInventory.AddArmor(); // lägg nyckeln i inventory (value)
                 Destroy(gameObject); // spräng objektet
             }
         }

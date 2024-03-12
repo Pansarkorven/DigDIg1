@@ -35,7 +35,7 @@ public class Spik : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(0.3f); // Wait for 1 second
+            yield return new WaitForSeconds(0.4f); // Wait for X amount of sekundre
             if (isPlayerTouching && healthComponent != null)
             {
                 healthComponent.TakeDamage(1); // Apply damage if player is still touching

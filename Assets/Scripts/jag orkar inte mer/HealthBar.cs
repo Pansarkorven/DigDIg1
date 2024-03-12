@@ -8,15 +8,20 @@ public class HealthBar : MonoBehaviour
 
     public Image healthBarImage;
 
-
     public Sprite sprite1; // eld animationen
     public Sprite sprite2; // eld animationen
     public Sprite sprite3; // eld animationen
     public Sprite sprite4; // eld animationen
 
+    public Sprite specialSprite1; // animation för armor hp
+    public Sprite specialSprite2; // animation för armor hp
+    public Sprite specialSprite3; // animation för armor hp
+    public Sprite specialSprite4; // animation för armor hp
+
     public float spriteInterval = 1f;
     public float healthUpdateInterval = 1f; // varje sekund uppdatera hp
 
+    public bool useSpecialHealthBar = false; // sätta på eller av special hp
     private float spriteTimer = 0f;
     private float healthTimer = 0f;
     private int currentIndex = 0;
@@ -34,27 +39,50 @@ public class HealthBar : MonoBehaviour
         {
             spriteTimer -= spriteInterval;
             currentIndex = (currentIndex + 1) % 4; // jag vet att detta är ett dåligt sätt att göra det jag bryr mig bara inte
-            switch (currentIndex)
+            if (useSpecialHealthBar)
             {
-                case 0:
-                    healthBarImage.sprite = sprite1;
-                    break;
-                case 1:
-                    healthBarImage.sprite = sprite2;
-                    break;
-                case 2:
-                    healthBarImage.sprite = sprite3;
-                    break;
-                case 3:
-                    healthBarImage.sprite = sprite4;
-                    break;
-                default:
-                    break;
+                switch (currentIndex)
+                {
+                    case 0:
+                        healthBarImage.sprite = specialSprite1;
+                        break;
+                    case 1:
+                        healthBarImage.sprite = specialSprite2;
+                        break;
+                    case 2:
+                        healthBarImage.sprite = specialSprite3;
+                        break;
+                    case 3:
+                        healthBarImage.sprite = specialSprite4;
+                        break;
+                    default:
+                        break;
+                }
+            }
+            else
+            {
+                switch (currentIndex)
+                {
+                    case 0:
+                        healthBarImage.sprite = sprite1;
+                        break;
+                    case 1:
+                        healthBarImage.sprite = sprite2;
+                        break;
+                    case 2:
+                        healthBarImage.sprite = sprite3;
+                        break;
+                    case 3:
+                        healthBarImage.sprite = sprite4;
+                        break;
+                    default:
+                        break;
+                }
             }
         }
     }
 
-    public void UpdateHP()
+    public void UpdateHP() // uppdatera hp, så när du skadas uppdaterar fillen
     {
         healthTimer += Time.deltaTime;
         if (healthTimer >= healthUpdateInterval)
@@ -62,17 +90,13 @@ public class HealthBar : MonoBehaviour
             healthTimer -= healthUpdateInterval;
             if (reference != null)
             {
-
                 int currentHealth = reference.CurrentHealth;
-
-
                 float fillAmount = (float)currentHealth / 6f;
-
                 FillImage.fillAmount = fillAmount;
             }
             else
             {
-                Debug.LogError("du måste referänsa till healthen");
+                Debug.LogError("du måste referänsa till hp");
             }
         }
     }

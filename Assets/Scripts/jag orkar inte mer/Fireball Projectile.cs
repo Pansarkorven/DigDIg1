@@ -5,7 +5,7 @@ using UnityEngine;
 public class FireballProjectile : MonoBehaviour
 {
     private new Rigidbody2D rigidbody;
-    public float projectilespeed;
+    public float projectileSpeed = 5f;
     private GameObject playerObject;
 
     void Start()
@@ -15,20 +15,22 @@ public class FireballProjectile : MonoBehaviour
 
         if (playerObject != null)
         {
-            bool isFacingRight = (playerObject.transform.localScale.x > 0);
+            bool isPlayerFacingRight = (playerObject.transform.localScale.x > 0); // jag hatar det här systemet
+            bool isFireballFacingRight = (transform.localScale.x > 0);
 
-            if (isFacingRight)
+            if (isPlayerFacingRight == isFireballFacingRight)
             {
-                rigidbody.velocity = transform.right * projectilespeed;
+                rigidbody.velocity = transform.right * projectileSpeed;
             }
             else
             {
-                rigidbody.velocity = -transform.right * projectilespeed;
+                rigidbody.velocity = -transform.right * projectileSpeed;
             }
         }
         else
         {
-            Debug.LogError("Spelarobjektet kunde inte hittas.");
+            Debug.LogError("Spelaren hittas inte");
+            Destroy(gameObject, 60f);
         }
     }
 }

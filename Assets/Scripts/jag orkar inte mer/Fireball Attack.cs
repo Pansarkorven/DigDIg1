@@ -6,25 +6,44 @@ public class FireballAttack : MonoBehaviour
 {
     public Transform firePosition;
     public GameObject projectile;
-    public GameObject playerObject; // Reference to the player's GameObject
+    public GameObject playerObject; // Referens till spelarens GameObject
+    private Inventory inventory; // referens till lagringen
+    private float lastAttackTime; // variabel för att lagra tiden för det senaste anfallet
+    public float attackCooldown = 5f; // 5 sek cooldown
+
+    void Start()
+    {
+        // Få spelarens lagring
+        inventory = playerObject.GetComponent<Inventory>();
+        if (inventory == null)
+        {
+            Debug.LogError("INventory hittades inte på spelaren");
+        }
+        // Sista tiden du attackerade
+        lastAttackTime = -attackCooldown; // Starta med en nedkylning så spelaren kan attackera omedelbart vid spelets start
+    }
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        
+        if (Time.time - lastAttackTime >= attackCooldown && inventory != null && inventory.HasRanged() && Input.GetMouseButtonDown(0))
         {
-            // Instantiate projectile
+            // Skapa projektilen
             GameObject newProjectile = Instantiate(projectile, firePosition.position, Quaternion.identity);
 
-            // Check if player is facing right
+            // Kontrollera om spelaren är vänd åt högerr
             bool isFacingRight = (playerObject.transform.localScale.x > 0);
 
-            // If not facing right, flip the fireball's scale
+            // Om inte åt höger så vänder den eldbollens skala så den ser ut som att den siktar åt det hållet, detta systemet suger balle men kenneth gjorde movement systemet så där så ingenting vänder när spelaren vänder så jag måste göra så jävla många saker för att fixa det
             if (!isFacingRight)
             {
                 Vector3 newScale = newProjectile.transform.localScale;
-                newScale.x *= -1; // Flip horizontally
+                newScale.x *= -1; // Vänd horisontellt
                 newProjectile.transform.localScale = newScale;
             }
+
+            // Uppdatera sista attack tiden
+            lastAttackTime = Time.time;
         }
     }
 }
