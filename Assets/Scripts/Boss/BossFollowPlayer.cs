@@ -12,11 +12,19 @@ public class BossFollowPlayer : MonoBehaviour
     public LayerMask groundLayer;
 
     private float lastJumpTime;
+    private float lastPlayerAboveTime; // New variable to track the time when the player was last detected above the boss
+    public float playerAboveCooldown = 2f; // New variable to set the cooldown duration between detecting player above and jumping
 
     public bool attacking = false;
+
+    private bool canMove = true;
+
     void Update()
     {
-        MoveTowardsPlayer();
+        if (canMove)
+        {
+            MoveTowardsPlayer();
+        }
     }
 
     void MoveTowardsPlayer()
@@ -36,8 +44,14 @@ public class BossFollowPlayer : MonoBehaviour
             float verticalDistance = player.position.y - transform.position.y;
             if (verticalDistance > 3.85 && verticalDistance < jumpHeightThreshold && Time.time - lastJumpTime > jumpCooldown)
             {
-                // Perform the jump or any other action
-                Jump();
+                // Check if the cooldown between detecting player above has passed
+                if (Time.time - lastPlayerAboveTime > playerAboveCooldown)
+                {
+                    // Perform the jump or any other action
+                    Jump();
+                    // Record the time when the player was last detected above the boss
+                    lastPlayerAboveTime = Time.time;
+                }
             }
         }
     }
@@ -50,5 +64,17 @@ public class BossFollowPlayer : MonoBehaviour
 
         // Record the time of the jump for cooldown calculation
         lastJumpTime = Time.time;
+    }
+
+    // Function to stop the boss movement
+    public void StopMoving()
+    {
+        canMove = false;
+    }
+
+    // Function to start the boss movement
+    public void StartMoving()
+    {
+        canMove = true;
     }
 }

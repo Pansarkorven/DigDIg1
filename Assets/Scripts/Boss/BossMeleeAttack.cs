@@ -12,6 +12,13 @@ public class BossMeleeAttack : MonoBehaviour
 
     private bool canAttack = true;
 
+    BossFollowPlayer bossMove;
+
+    private void Start()
+    {
+        bossMove = GetComponent<BossFollowPlayer>();
+    }
+
     void Update()
     {
         if (canAttack)
@@ -22,20 +29,25 @@ public class BossMeleeAttack : MonoBehaviour
 
     void StartCharge()
     {
-        
+        bossMove.StopMoving();
+
         // You might want to play a charging animation here
 
         // Invoke the actual attack after the charging duration
         Invoke("Attack", chargeTime);
-        Attack();
+
+        // Set canAttack to false only after invoking the Attack method
         canAttack = false;
-        Debug.Log("IStartSwing");
+
+        Debug.Log("Start Swinging");
     }
 
     void Attack()
     {
-        // Resume moving or perform the attack logic here
+        
+       
 
+        // Perform the attack logic
         Collider2D[] hitPlayers = Physics2D.OverlapCircleAll(transform.position, attackRange, playerLayer);
 
         foreach (Collider2D player in hitPlayers)
@@ -46,7 +58,10 @@ public class BossMeleeAttack : MonoBehaviour
 
         // Start the cooldown before the boss can attack again
         Invoke("ResetAttackCooldown", attackCooldown);
-        Debug.Log("I Swung Sword");
+        Debug.Log("Swing Sword");
+
+        // Resume boss movement when the attack is executed
+        bossMove.StartMoving();
     }
 
     void ResetAttackCooldown()
