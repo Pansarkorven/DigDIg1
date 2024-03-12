@@ -18,6 +18,8 @@ public class Health : MonoBehaviour
     {
         CurrentHealth -= amount;
 
+        Debug.Log("Ouch you hit me!");
+
         if (CurrentHealth <= 0)
         {
             Debug.Log(" du dog noob ");

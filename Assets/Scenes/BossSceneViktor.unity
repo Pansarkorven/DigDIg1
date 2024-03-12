@@ -1559,7 +1559,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 2
-  attackRange: 12
+  attackRange: 5
   playerLayer:
     serializedVersion: 2
     m_Bits: 64
