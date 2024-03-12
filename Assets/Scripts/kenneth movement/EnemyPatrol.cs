@@ -4,7 +4,7 @@ using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class EnemyPatrol : MonoBehaviour
 {
-    Gun[] guns;
+   
 
     public bool isFacingRight = true;
     private float horizontal;
@@ -33,7 +33,7 @@ public class EnemyPatrol : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         currentPoint = pointB.transform;
-        guns = transform.GetComponentsInChildren<Gun>();
+        
     }
 
     // Update is called once per frame
@@ -64,16 +64,7 @@ public class EnemyPatrol : MonoBehaviour
             Dash();
         }
 
-        shoot = Input.GetKeyDown(KeyCode.W);
-        if (shoot)
-        {
-            shoot = false;
-            foreach(Gun gun in guns)
-            {
-                gun.Shoot();
-            }
-        }
-
+        
         Flip();
     }
 
