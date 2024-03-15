@@ -557,6 +557,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2896496234917839855, guid: 3e6db5f4daf822342929a63a40741c69, type: 3}
+      propertyPath: m_SurfaceArc
+      value: 170
+      objectReference: {fileID: 0}
     - target: {fileID: 8726302642067547369, guid: 3e6db5f4daf822342929a63a40741c69, type: 3}
       propertyPath: m_Name
       value: OneWayPlatform (1)
@@ -1294,6 +1298,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isRunning: 0
+  isFacingRight: 1
   boxSize: {x: 0.5, y: 2}
   rb: {fileID: 1375105156}
   groundCheck: {fileID: 1315407919}
