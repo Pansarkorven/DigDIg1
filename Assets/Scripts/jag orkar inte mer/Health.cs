@@ -8,6 +8,7 @@ public class Health : MonoBehaviour
     public int MaxHealth = 10;
     public int CurrentHealth;
     public GameObject Player = null;
+    
 
     private void Start()
     {

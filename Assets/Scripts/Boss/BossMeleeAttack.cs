@@ -1,40 +1,43 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;
 
 public class BossMeleeAttack : MonoBehaviour
 {
-    public int attackDamage = 1;
-    public float attackRange = 2f;
-    public LayerMask playerLayer;
-    public float attackCooldown = 2f;
-    public float chargeTime = 1.5f; // Adjust this value for the charging duration
+    [SerializeField] int attackDamage = 1;
+    [SerializeField] float attackRange = 2f;
+    [SerializeField] LayerMask playerLayer;
+    [SerializeField] float attackCooldown = 2f;
+    [SerializeField] float chargeTime = 1.5f;
+    [SerializeField] Transform HitPointLeft;
+    [SerializeField] Animator Anim;
 
-    private bool canAttack = true;
+    bool canAttack = true;
 
     BossFollowPlayer bossMove;
 
-    private void Start()
+    void Start()
     {
         bossMove = GetComponent<BossFollowPlayer>();
+        StartCoroutine(AttackRoutine());
     }
 
-    private void Update() // Called every single frame
+    IEnumerator AttackRoutine()
     {
-        
-    }
-
-    void FixedUpdate() // Called every physics update, every 0.02 second
-    {
-        if (canAttack)
+        while (true)
         {
-            StartCharge();
+            if (canAttack)
+            {
+                yield return new WaitForSeconds(attackCooldown);
+                StartCharge();
+            }
+            yield return null;
         }
     }
 
     void StartCharge()
     {
         bossMove.StopMoving();
+        Anim.SetTrigger("BossAttacking");
 
         // You might want to play a charging animation here
 
@@ -52,9 +55,9 @@ public class BossMeleeAttack : MonoBehaviour
         bossMove.StartMoving();
 
         // Perform the attack logic
-        Collider2D[] hitPlayers = Physics2D.OverlapCircleAll(transform.position, attackRange, playerLayer);
+        Collider2D[] hitPlayersRight = Physics2D.OverlapCircleAll(HitPointLeft.position, attackRange, playerLayer);
 
-        foreach (Collider2D player in hitPlayers)
+        foreach (Collider2D player in hitPlayersRight)
         {
             player.GetComponent<Health>().TakeDamage(attackDamage);
             Debug.Log(player + " is hit!");
@@ -62,12 +65,13 @@ public class BossMeleeAttack : MonoBehaviour
         }
 
         // Start the cooldown before the boss can attack again
-        Invoke("ResetAttackCooldown", attackCooldown);
+        StartCoroutine(ResetAttackCooldown());
         Debug.Log("Swing Sword");
     }
 
-    void ResetAttackCooldown()
+    IEnumerator ResetAttackCooldown()
     {
+        yield return new WaitForSeconds(attackCooldown);
         canAttack = true;
     }
 
@@ -75,6 +79,6 @@ public class BossMeleeAttack : MonoBehaviour
     {
         // Visualize the attack range in the scene view
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, attackRange);
+        Gizmos.DrawWireSphere(HitPointLeft.position, attackRange);
     }
 }

@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class MainCharacterController : MonoBehaviour
 {
-    private float horizontal;
+    [SerializeField] float horizontal;
     public bool isRunning = false; // Flag to indicate if the player is running
-    private float runningSpeed = 12f; // Speed when running
-    private float walkingSpeed = 8f; // Speed when walking
-    private float jumpingPower = 16f;
-    public bool isFacingRight = true;
-    public Vector2 boxSize = new Vector2(0.5f, 2f);
-    public float flipDistance = 0.1f;
+    [SerializeField] float runningSpeed = 12f; // Speed when running
+    [SerializeField] float walkingSpeed = 8f; // Speed when walking
+    [SerializeField] float jumpingPower = 16f;
+   public bool isFacingRight = true;
+    [SerializeField] Vector2 boxSize = new Vector2(0.5f, 2f);
+    [SerializeField] float flipDistance = 0.1f;
 
-    public Animator Anim;
+    [SerializeField] Animator Anim;
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
@@ -114,14 +114,5 @@ public class MainCharacterController : MonoBehaviour
         }
     }
 
-    //private void Flip()
-    //{
-    //    if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
-    //    {
-    //        isFacingRight = !isFacingRight;
-    //        Vector3 localScale = transform.localScale;
-    //        localScale.x *= -1f;
-    //        transform.localScale = localScale;
-    //    }
-    //}
+  
 }
