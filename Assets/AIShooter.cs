@@ -38,6 +38,6 @@ public class AIShooter : MonoBehaviour
         // Instantiate a projectile at the shoot point
         GameObject projectile = Instantiate(projectilePrefab, shootPoint.position, Quaternion.identity);
         // Set the projectile's direction
-        projectile.GetComponent<Projectile>().SetDirection((target.position - shootPoint.position).normalized);
+       // projectile.GetComponent<Projectile>().SetDirection((target.position - shootPoint.position).normalized);
     }
 }
