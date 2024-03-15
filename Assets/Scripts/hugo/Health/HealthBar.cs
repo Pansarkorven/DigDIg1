@@ -4,27 +4,25 @@ using UnityEngine.UI;
 public class HealthBar : MonoBehaviour
 {
     public Image FillImage;
+    public Sprite NormalFillSprite;
+    public Sprite SpecialFillSprite;
     public Health reference;
-
     public Image healthBarImage;
-
-    public Sprite sprite1; // eld animationen
-    public Sprite sprite2; // eld animationen
-    public Sprite sprite3; // eld animationen
-    public Sprite sprite4; // eld animationen
-
-    public Sprite specialSprite1; // animation för armor hp
-    public Sprite specialSprite2; // animation för armor hp
-    public Sprite specialSprite3; // animation för armor hp
-    public Sprite specialSprite4; // animation för armor hp
-
+    public Sprite sprite1;
+    public Sprite sprite2;
+    public Sprite sprite3;
+    public Sprite sprite4;
+    public Sprite specialSprite1;
+    public Sprite specialSprite2;
+    public Sprite specialSprite3;
+    public Sprite specialSprite4;
     public float spriteInterval = 1f;
-    public float healthUpdateInterval = 1f; // varje sekund uppdatera hp
-
-    public bool useSpecialHealthBar = false; // sätta på eller av special hp
+    public float healthUpdateInterval = 1f;
+    public bool useSpecialHealthBar = false;
     private float spriteTimer = 0f;
     private float healthTimer = 0f;
     private int currentIndex = 0;
+    public float bombaclat = 6f;
 
     void Update()
     {
@@ -38,7 +36,7 @@ public class HealthBar : MonoBehaviour
         if (spriteTimer >= spriteInterval)
         {
             spriteTimer -= spriteInterval;
-            currentIndex = (currentIndex + 1) % 4; // jag vet att detta är ett dåligt sätt att göra det jag bryr mig bara inte
+            currentIndex = (currentIndex + 1) % 4;
             if (useSpecialHealthBar)
             {
                 switch (currentIndex)
@@ -82,7 +80,7 @@ public class HealthBar : MonoBehaviour
         }
     }
 
-    public void UpdateHP() // uppdatera hp, så när du skadas uppdaterar fillen
+    public void UpdateHP()
     {
         healthTimer += Time.deltaTime;
         if (healthTimer >= healthUpdateInterval)
@@ -91,12 +89,16 @@ public class HealthBar : MonoBehaviour
             if (reference != null)
             {
                 int currentHealth = reference.CurrentHealth;
-                float fillAmount = (float)currentHealth / 6f;
+                float fillAmount = (float)currentHealth / (useSpecialHealthBar ? 9f : bombaclat); 
+                if (useSpecialHealthBar)
+                {
+                    FillImage.sprite = SpecialFillSprite;
+                }
+                else
+                {
+                    FillImage.sprite = NormalFillSprite;
+                }
                 FillImage.fillAmount = fillAmount;
-            }
-            else
-            {
-                Debug.LogError("du måste referänsa till hp");
             }
         }
     }
