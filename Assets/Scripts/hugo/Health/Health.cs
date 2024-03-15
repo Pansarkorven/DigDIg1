@@ -1,11 +1,11 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement; // Add this line to import the SceneManager
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
     public Animator Animation;
-    public int MaxHealth = 10;
+    public int MaxHealth = 9;
     public int CurrentHealth;
     public GameObject Player = null;
     
@@ -19,21 +19,19 @@ public class Health : MonoBehaviour
     {
         CurrentHealth -= amount;
 
-        Debug.Log("Ouch you hit me!");
-
         if (CurrentHealth <= 0)
         {
             Debug.Log(" du dog noob ");
-            //Animation.SetBool("IsDead", true);
+            Animation.SetBool("IsDead", true);
             Player.GetComponent<MainCharacterController>().enabled = false;
-            StartCoroutine(LoadDeathScreenAfterDelay(2f)); // Start the coroutine to delay scene loading
+            StartCoroutine(LoadDeathScreenAfterDelay(2f));
         }
     }
 
     IEnumerator LoadDeathScreenAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-        SceneManager.LoadScene("DeathScreen"); // Load the DeathScreen scene after the delay
+        SceneManager.LoadScene("DeathScreen");
     }
 
     public void Heal(int amount)

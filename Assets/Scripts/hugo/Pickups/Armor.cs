@@ -58,10 +58,6 @@ public class Armor : MonoBehaviour
             CancelInvoke("CycleSprites");
             InvokeRepeating("CycleSprites", cycleTime, cycleTime);
         }
-        else
-        {
-            Debug.LogError("No sprites assigned to SpriteCycler.");
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
