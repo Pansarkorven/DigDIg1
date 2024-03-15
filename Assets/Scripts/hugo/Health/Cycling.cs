@@ -25,20 +25,16 @@ public class Cycling : MonoBehaviour
             spriteRenderer.sprite = sprites[currentIndex];
             InvokeRepeating("CycleSprites", cycleTime, cycleTime);
         }
-        else
-        {
-            Debug.LogError("No sprites assigned to SpriteCycler.");
-        }
     }
 
     private void CycleSprites()
     {
-        currentIndex = (currentIndex + 1) % sprites.Length; // Increment index and wrap around
+        currentIndex = (currentIndex + 1) % sprites.Length;
 
         spriteRenderer.sprite = sprites[currentIndex];
     }
 
-    // Function to manually assign sprites from Unity Editor
+
     public void AssignSprites(Sprite[] newSprites)
     {
         sprites = newSprites;
@@ -47,10 +43,6 @@ public class Cycling : MonoBehaviour
             spriteRenderer.sprite = sprites[currentIndex];
             CancelInvoke("CycleSprites");
             InvokeRepeating("CycleSprites", cycleTime, cycleTime);
-        }
-        else
-        {
-            Debug.LogError("No sprites assigned to SpriteCycler.");
         }
     }
 }
