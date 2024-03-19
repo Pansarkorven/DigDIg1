@@ -8,8 +8,29 @@ public class AnotherShooting : MonoBehaviour
     public GameObject bulletPrefab;
     public float bulletSpeed = 10f;
     public int numBullets = 5;
-    public float spreadAngle = 15f; // in degrees
+    public float spreadAngle = 5f; // in degrees
+    public float shootInterval = 4f; // Interval between shots in seconds
 
+    private bool canShoot = true;
+    void Start()
+    {
+        StartCoroutine(ShootRoutine());
+    }
+
+    IEnumerator ShootRoutine()
+    {
+        while (true)
+        {
+            if (canShoot)
+            {
+                Shoot();
+                canShoot = false;
+                yield return new WaitForSeconds(shootInterval);
+                canShoot = true;
+            }
+            yield return null;
+        }
+    }
 
     void Update()
     {
