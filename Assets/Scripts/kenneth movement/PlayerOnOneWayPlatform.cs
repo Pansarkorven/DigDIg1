@@ -14,6 +14,7 @@ public class PlayerOneWayPlatform : MonoBehaviour
             if (currentOneWayPlatform != null)
             {
                 StartCoroutine(DisableCollision());
+             
             }
         }
     }
