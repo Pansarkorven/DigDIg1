@@ -4,16 +4,22 @@ using UnityEngine;
 
 public class MainCharacterController : MonoBehaviour
 {
-    [SerializeField] float horizontal;
+    private float horizontal;
     public bool isRunning = false; // Flag to indicate if the player is running
-    [SerializeField] float runningSpeed = 12f; // Speed when running
-    [SerializeField] float walkingSpeed = 8f; // Speed when walking
-    [SerializeField] float jumpingPower = 16f;
-   public bool isFacingRight = true;
-    [SerializeField] Vector2 boxSize = new Vector2(0.5f, 2f);
-    [SerializeField] float flipDistance = 0.1f;
+    private float runningSpeed = 12f; // Speed when running
+    private float walkingSpeed = 8f; // Speed when walking
+    private float jumpingPower = 16f;
+    public bool isFacingRight = true;
+    public Vector2 boxSize = new Vector2(0.5f, 2f);
+    public float flipDistance = 0.1f;
 
-    [SerializeField] Animator Anim;
+    public bool canDash = false;
+    private bool isDashing;
+    public float dashingPower = 4f;
+    private float dashingTime = 0.1f;
+    public float dashingCooldown = 7f;
+
+    public Animator Anim;
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
@@ -29,7 +35,13 @@ public class MainCharacterController : MonoBehaviour
     {
         horizontal = Input.GetAxisRaw("Horizontal");
 
-        // Toggle running
+        if (isDashing)
+        {
+            return;
+        }
+
+
+
         if (Input.GetKeyDown(KeyCode.LeftShift) && horizontal != 0)
         {
             isRunning = true;
@@ -63,11 +75,21 @@ public class MainCharacterController : MonoBehaviour
             Anim.SetBool("IsRunning", false);
         }
 
+        if (Input.GetKeyDown(KeyCode.LeftControl) && canDash)
+        {
+            StartCoroutine(Dash());
+        }
+
         Flip();
     }
 
     private void FixedUpdate()
     {
+        if (isDashing)
+        {
+            return;
+        }
+
         // Calculate movement speed
         float currentSpeed = isRunning ? runningSpeed : walkingSpeed;
         rb.velocity = new Vector2(horizontal * currentSpeed, rb.velocity.y);
@@ -114,5 +136,29 @@ public class MainCharacterController : MonoBehaviour
         }
     }
 
-  
+    private IEnumerator Dash()
+    {
+        canDash = false;
+        isDashing = true;
+        float originalGravity = rb.gravityScale;
+        rb.gravityScale = 0f;
+        rb.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);
+        yield return new WaitForSeconds(dashingTime);
+        rb.gravityScale = originalGravity;
+        isDashing = false;
+        yield return new WaitForSeconds(dashingCooldown);
+        canDash = true;
+
+    }
+
+    //private void Flip()
+    //{
+    //    if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
+    //    {
+    //        isFacingRight = !isFacingRight;
+    //        Vector3 localScale = transform.localScale;
+    //        localScale.x *= -1f;
+    //        transform.localScale = localScale;
+    //    }
+    //}
 }
