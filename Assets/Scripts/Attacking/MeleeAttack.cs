@@ -6,13 +6,13 @@ public class MeleeAttack : MonoBehaviour
 {
     public float attackRange = 0.5f;
     public int attackDamage = 1;
-
     public LayerMask enemyLayer;
-
     public Transform attackPoint;
     public Transform attackPointUp;
-
     public Animator animator;
+
+    private bool isAttacking = false;
+    public float attackCooldown = 0.5f; // Adjust as needed
 
     void Start()
     {
@@ -21,18 +21,19 @@ public class MeleeAttack : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F) && !isAttacking)
         {
-            PerformAttack();
+            StartCoroutine(PerformAttack());
         }
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W) && !isAttacking)
         {
-            PreformAttackUp();
+            StartCoroutine(PerformAttackUp());
         }
     }
 
-    void PerformAttack()
+    IEnumerator PerformAttack()
     {
+        isAttacking = true;
 
         // Perform the melee attack based on the character's direction
         if (IsFacingRight())
@@ -47,19 +48,18 @@ public class MeleeAttack : MonoBehaviour
             animator.SetTrigger("Attack");
         }
 
-        // Perform the melee attack upwards
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            AttackUp();
-            animator.SetTrigger("AttackUp");
-        }
-    }
-    void PreformAttackUp()
-    {
-        AttackUp();
-        animator.SetTrigger("AttackUp");
+        yield return new WaitForSeconds(attackCooldown);
+        isAttacking = false;
     }
 
+    IEnumerator PerformAttackUp()
+    {
+        isAttacking = true;
+        AttackUp();
+        animator.SetTrigger("AttackUp");
+        yield return new WaitForSeconds(attackCooldown);
+        isAttacking = false;
+    }
 
     void AttackSide()
     {
@@ -67,7 +67,7 @@ public class MeleeAttack : MonoBehaviour
 
         foreach (Collider2D enemy in hitEnemies)
         {
-            enemy.GetComponent<EnemyHealth>().TakeDamage(attackDamage);
+            enemy.GetComponent<BossHealth>().TakeDamage(attackDamage);
         }
     }
 
@@ -89,12 +89,7 @@ public class MeleeAttack : MonoBehaviour
 
     void OnDrawGizmosSelected()
     {
-        if (attackPoint == null)
-        {
-            return;
-        }
-
-        if (attackPointUp == null)
+        if (attackPoint == null || attackPointUp == null)
         {
             return;
         }

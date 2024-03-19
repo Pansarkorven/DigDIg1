@@ -80,6 +80,8 @@ GameObject:
   - component: {fileID: 1350173238445161863}
   - component: {fileID: 8887327066765171268}
   - component: {fileID: 130937526346973119}
+  - component: {fileID: 2868056935528418786}
+  - component: {fileID: 2015521141479014025}
   m_Layer: 6
   m_Name: CharacterMedAni
   m_TagString: Player
@@ -315,6 +317,9 @@ MonoBehaviour:
   isFacingRight: 1
   boxSize: {x: 0.5, y: 2}
   flipDistance: -1.8
+  canDash: 0
+  dashingPower: 4
+  dashingCooldown: 7
   Anim: {fileID: 7822758410712666910}
   rb: {fileID: 3631719065910060856}
   groundCheck: {fileID: 6578711849756026489}
@@ -334,6 +339,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCollider: {fileID: 1350199557625848791}
+--- !u!114 &2868056935528418786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7641518020062367843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67e6239498bde0c41a5c356aa1de7ed3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasKey: 0
+  hasRanged: 0
+  hasArmor: 0
+  hasDash: 0
+  playerHealth: {fileID: 1350173238445161863}
+  playerHealthBar: {fileID: 0}
+  controller: {fileID: 8887327066765171268}
+--- !u!114 &2015521141479014025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7641518020062367843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 393dd9cb3c2d9704ebdbc5322c584619, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePosition: {fileID: 2971456044023970084}
+  projectile: {fileID: 309717887824301887, guid: 2daff99a53c8b6d46a40006433b76d8a, type: 3}
+  playerObject: {fileID: 7641518020062367843}
+  attackCooldown: 5
 --- !u!1 &8427568999806782032
 GameObject:
   m_ObjectHideFlags: 0
