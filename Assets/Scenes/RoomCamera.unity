@@ -266,7 +266,7 @@ GameObject:
   - component: {fileID: 252335215}
   m_Layer: 0
   m_Name: Square (1)
-  m_TagString: Untagged
+  m_TagString: RoomBound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -396,7 +396,7 @@ GameObject:
   - component: {fileID: 330808754}
   m_Layer: 0
   m_Name: Square (4)
-  m_TagString: Untagged
+  m_TagString: RoomBound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -913,7 +913,7 @@ GameObject:
   - component: {fileID: 1055269372}
   m_Layer: 0
   m_Name: Square (2)
-  m_TagString: Untagged
+  m_TagString: RoomBound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1132,12 +1132,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1122782402}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d5f778ec21008ce45a9ef9d06d5b9434, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camTarget: {fileID: 842758476}
+  target: {fileID: 842758476}
+  roomPadding: 10
+  minCameraSize: 5
 --- !u!114 &1122782407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1195,7 +1197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomCenter: {fileID: 842758476}
-  roomSize: {x: 100, y: 100}
+  roomSize: {x: 1000, y: 1000}
   cameraPadding: 1
   cameraSmoothness: 5
 --- !u!1 &1139991137
@@ -1211,7 +1213,7 @@ GameObject:
   - component: {fileID: 1139991138}
   m_Layer: 3
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: RoomBound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1471,7 +1473,7 @@ GameObject:
   - component: {fileID: 1274360690}
   m_Layer: 0
   m_Name: Square (6)
-  m_TagString: Untagged
+  m_TagString: RoomBound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1601,7 +1603,7 @@ GameObject:
   - component: {fileID: 1829142598}
   m_Layer: 0
   m_Name: Square (5)
-  m_TagString: Untagged
+  m_TagString: RoomBound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
