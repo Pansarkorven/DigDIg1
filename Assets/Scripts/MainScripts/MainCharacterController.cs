@@ -4,22 +4,22 @@ using UnityEngine;
 
 public class MainCharacterController : MonoBehaviour
 {
-    private float horizontal;
+    [SerializeField] float horizontal;
     public bool isRunning = false; // Flag to indicate if the player is running
-    private float runningSpeed = 12f; // Speed when running
-    private float walkingSpeed = 8f; // Speed when walking
-    private float jumpingPower = 16f;
-    public bool isFacingRight = true;
-    public Vector2 boxSize = new Vector2(0.5f, 2f);
-    public float flipDistance = 0.1f;
+    [SerializeField] float runningSpeed = 12f; // Speed when running
+    [SerializeField] float walkingSpeed = 8f; // Speed when walking
+    [SerializeField] float jumpingPower = 16f;
+    bool isFacingRight = true;
+    [SerializeField] Vector2 boxSize = new Vector2(0.5f, 2f);
+    [SerializeField] float flipDistance = 0.1f;
 
     public bool canDash = false;
-    private bool isDashing;
-    public float dashingPower = 4f;
-    private float dashingTime = 0.1f;
-    public float dashingCooldown = 7f;
+    bool isDashing;
+    [SerializeField] float dashingPower = 4f;
+    [SerializeField] float dashingTime = 0.1f;
+    [SerializeField] float dashingCooldown = 7f;
 
-    public Animator Anim;
+    [SerializeField] Animator Anim;
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
