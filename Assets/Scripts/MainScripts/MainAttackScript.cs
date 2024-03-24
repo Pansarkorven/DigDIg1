@@ -77,7 +77,7 @@ public class MainAttackScript : MonoBehaviour
 
         foreach (Collider2D enemy in hitEnemies)
         {
-            enemy.GetComponent<EnemyHealth>().TakeDamage(attackDamage);
+            enemy.GetComponent<BossHealth>().TakeDamage(attackDamage);
         }
         Debug.Log("slår up");
     }

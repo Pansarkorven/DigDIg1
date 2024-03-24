@@ -875,7 +875,7 @@ MonoBehaviour:
   speed: 5
   moveSpeed: 1
   dashSpeed: 20
-  dashDuration: 0.1
+  dashDuration: 1
   dashCooldown: 2
   dashKey: 32
 --- !u!114 &2107996583
@@ -990,7 +990,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4471079321722743377, guid: 27f33ac2cedf3c640abb9c02ee4432b3, type: 3}
       propertyPath: dashDuration
-      value: 0.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4849018613936924708, guid: 27f33ac2cedf3c640abb9c02ee4432b3, type: 3}
       propertyPath: m_LocalPosition.x

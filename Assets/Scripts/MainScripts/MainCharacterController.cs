@@ -64,6 +64,7 @@ public class MainCharacterController : MonoBehaviour
         if (Input.GetButtonDown("Jump") && CoyoteTimeCounter > 0f )
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+            Anim.SetTrigger("Jump");
         }
 
         if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)

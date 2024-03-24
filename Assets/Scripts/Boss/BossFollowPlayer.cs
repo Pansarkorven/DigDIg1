@@ -63,7 +63,7 @@ public class BossFollowPlayer : MonoBehaviour
             transform.Translate(direction * moveSpeed * Time.deltaTime);
 
             float verticalDistance = player.position.y - transform.position.y;
-            if (verticalDistance > 3.85 && verticalDistance < jumpHeightThreshold && Time.time - lastJumpTime > jumpCooldown)
+            if (verticalDistance > 4 && verticalDistance < jumpHeightThreshold && Time.time - lastJumpTime > jumpCooldown)
             {
                 if (Time.time - lastPlayerAboveTime > playerAboveCooldown)
                 {

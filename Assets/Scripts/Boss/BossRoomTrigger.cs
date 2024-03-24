@@ -5,6 +5,8 @@ using UnityEngine;
 public class BossRoomTrigger : MonoBehaviour
 {
     [SerializeField] private GameObject bossPrefab; // Reference to the boss prefab
+    [SerializeField ] private GameObject DoorPrefab;
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -14,6 +16,11 @@ public class BossRoomTrigger : MonoBehaviour
             if (bossPrefab != false)
             {
                 bossPrefab.SetActive(true);
+            }
+
+            if (DoorPrefab != false)
+            { 
+                DoorPrefab.SetActive(true);
             }
 
             // Perform any additional actions here, such as playing a cutscene, showing UI, etc.
