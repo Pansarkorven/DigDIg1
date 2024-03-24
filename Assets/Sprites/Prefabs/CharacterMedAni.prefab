@@ -227,6 +227,7 @@ MonoBehaviour:
   attackPoint: {fileID: 2971456044023970084}
   attackPointUp: {fileID: 7331785868270148780}
   animator: {fileID: 7822758410712666910}
+  attackCooldown: 1.5
 --- !u!114 &7673304523004705691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,12 +314,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41588a2d27564d8408fa3982b74b490f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  horizontal: 0
   isRunning: 0
-  isFacingRight: 1
+  runningSpeed: 12
+  walkingSpeed: 8
+  jumpingPower: 16
   boxSize: {x: 0.5, y: 2}
   flipDistance: -1.8
   canDash: 0
   dashingPower: 4
+  dashingTime: 0.1
   dashingCooldown: 7
   Anim: {fileID: 7822758410712666910}
   rb: {fileID: 3631719065910060856}
@@ -326,6 +331,8 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+  CoyoteTime: 0.2
+  CoyoteTimeCounter: 0
 --- !u!114 &130937526346973119
 MonoBehaviour:
   m_ObjectHideFlags: 0

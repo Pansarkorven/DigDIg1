@@ -16,24 +16,41 @@ public class BossFollowPlayer : MonoBehaviour
     [SerializeField] float playerAboveCooldown = 2f;
 
     bool canMove = true;
+    bool canMoveCloseEnugh;
     bool BossFacingRight = false;
+
+    [SerializeField] float DistanceThreshold = 5.0f;
 
     void Update()
     {
-        if (canMove)
+        if (canMove && canMoveCloseEnugh)
         {
             MoveTowardsPlayer();
-            Anim.SetBool("BossMoving",true);
+            Anim.SetBool("BossMoving", true);
         }
         else
         {
-            Anim.SetBool("BossMoving",false);
+            Anim.SetBool("BossMoving", false);
         }
         if (canMove)
-        {   
+        {
             // Assuming you have some input to determine horizontal movement
             float horizontal = Input.GetAxisRaw("Horizontal");
             Flip();
+        }
+
+        float distance = Vector3.Distance(transform.position, player.position);
+
+        if (canMove)
+        {
+            if (distance < DistanceThreshold)
+            {
+                canMoveCloseEnugh = false;
+            }
+            else
+            {
+                canMoveCloseEnugh = true;
+            }
         }
     }
 

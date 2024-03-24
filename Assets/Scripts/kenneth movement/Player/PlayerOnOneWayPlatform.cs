@@ -5,7 +5,7 @@ public class PlayerOneWayPlatform : MonoBehaviour
 {
     private GameObject currentOneWayPlatform;
 
-    [SerializeField] private BoxCollider2D playerCollider;
+    [SerializeField] private Collider2D playerCollider;
 
     private void Update()
     {
@@ -14,7 +14,7 @@ public class PlayerOneWayPlatform : MonoBehaviour
             if (currentOneWayPlatform != null)
             {
                 StartCoroutine(DisableCollision());
-             
+
             }
         }
     }

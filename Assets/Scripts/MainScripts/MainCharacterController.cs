@@ -25,6 +25,9 @@ public class MainCharacterController : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
 
+    [SerializeField] float CoyoteTime = 0.2f;
+    [SerializeField] float CoyoteTimeCounter;
+
     // Update is called once per frame
 
     private void Start()
@@ -40,7 +43,14 @@ public class MainCharacterController : MonoBehaviour
             return;
         }
 
-
+        if (IsGrounded()) 
+        {
+           CoyoteTimeCounter = CoyoteTime;
+        }
+        else 
+        {
+           CoyoteTimeCounter -= Time.deltaTime;
+        }
 
         if (Input.GetKeyDown(KeyCode.LeftShift) && horizontal != 0)
         {
@@ -51,7 +61,7 @@ public class MainCharacterController : MonoBehaviour
             isRunning = false;
         }
 
-        if (Input.GetButtonDown("Jump") && IsGrounded())
+        if (Input.GetButtonDown("Jump") && CoyoteTimeCounter > 0f )
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
         }
@@ -59,6 +69,8 @@ public class MainCharacterController : MonoBehaviour
         if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+
+            CoyoteTimeCounter = 0f;
         }
 
         if (Input.GetKeyDown(KeyCode.E))
@@ -115,6 +127,8 @@ public class MainCharacterController : MonoBehaviour
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     }
+
+    
 
     private void Flip()
     {
