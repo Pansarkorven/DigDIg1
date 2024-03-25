@@ -1,34 +1,56 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class MainAttackScript : MonoBehaviour
 {
-    public float attackRange = 0.5f;
-    public int attackDamage = 1;
-    public LayerMask enemyLayer;
-    public Transform attackPoint;
-    public Transform attackPointUp;
-    public Animator animator;
+    [SerializeField] float attackRange = 0.5f;
+    [SerializeField] int attackDamage = 1;
+    [SerializeField] LayerMask enemyLayer;
+    [SerializeField] Transform attackPoint;
+    [SerializeField] Transform attackPointUp;
+    [SerializeField] Animator animator;
+    [SerializeField] float WhereMouse;
+    [SerializeField] float WhenAttackUp = 6;
+    [SerializeField] Transform PlayerTransform;
+    [SerializeField] float PlayerPosition;
+    
 
+    bool AttackUpCehck = false;
     private bool isAttacking = false;
-    public float attackCooldown = 0.5f; // Adjust as needed
+    [SerializeField] float attackCooldown = 0.5f; // Adjust as needed
 
     void Start()
     {
+        PlayerTransform = transform;
         animator = GetComponent<Animator>();
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) && !isAttacking)
-        {
-            StartCoroutine(PerformAttack());
-        }
-        if (Input.GetKeyDown(KeyCode.W) && !isAttacking)
+        if (Input.GetButtonDown("Fire1") && !isAttacking && AttackUpCehck == true)
         {
             StartCoroutine(PerformAttackUp());
         }
+        if (Input.GetButtonDown("Fire1") && !isAttacking && AttackUpCehck == false)
+        {
+            StartCoroutine(PerformAttack());
+        }
+        Vector2 MouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 playerPosition = PlayerTransform.position;
+        WhereMouse = MouseWorldPos.y - PlayerPosition;
+        PlayerPosition = playerPosition.y;
+        
+        if (WhereMouse > WhenAttackUp) 
+        {
+         AttackUpCehck = true;
+        }
+        else 
+        { 
+         AttackUpCehck= false;
+        }
+        
     }
 
     IEnumerator PerformAttack()

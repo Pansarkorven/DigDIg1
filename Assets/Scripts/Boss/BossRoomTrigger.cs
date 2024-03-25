@@ -5,7 +5,7 @@ using UnityEngine;
 public class BossRoomTrigger : MonoBehaviour
 {
     [SerializeField] private GameObject bossPrefab; // Reference to the boss prefab
-    [SerializeField ] private GameObject DoorPrefab;
+    [SerializeField] private GameObject DoorPrefab;
 
 
     private void OnTriggerEnter2D(Collider2D other)
