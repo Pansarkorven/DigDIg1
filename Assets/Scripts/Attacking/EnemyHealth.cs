@@ -14,12 +14,20 @@ public class EnemyHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        // Reduce the boss's health by the amount of damage taken
         currentHealth -= damage;
 
+        // Ensure the health doesn't go below zero
+        currentHealth = Mathf.Max(currentHealth, 0);
+
+     
+
+        // Check if the boss has been defeated
         if (currentHealth <= 0)
         {
             Die();
         }
+      
     }
 
     void Die()

@@ -91,6 +91,7 @@ public class MainAttackScript : MonoBehaviour
         {
             enemy.GetComponent<BossHealth>().TakeDamage(attackDamage);
         }
+     
     }
 
     void AttackUp()

@@ -91,6 +91,7 @@ public class MainCharacterController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftControl) && canDash)
         {
             StartCoroutine(Dash());
+            Anim.SetTrigger("Dash");
         }
 
         Flip();

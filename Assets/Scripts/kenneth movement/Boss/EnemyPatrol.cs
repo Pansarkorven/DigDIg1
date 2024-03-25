@@ -1,6 +1,5 @@
-using UnityEditor.Tilemaps;
 using UnityEngine;
-using static UnityEditor.Searcher.SearcherWindow.Alignment;
+
 
 public class EnemyPatrol : MonoBehaviour
 {
