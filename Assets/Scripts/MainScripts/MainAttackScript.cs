@@ -16,6 +16,7 @@ public class MainAttackScript : MonoBehaviour
     [SerializeField] Transform PlayerTransform;
     [SerializeField] float PlayerPosition;
     
+    
 
     bool AttackUpCehck = false;
     private bool isAttacking = false;

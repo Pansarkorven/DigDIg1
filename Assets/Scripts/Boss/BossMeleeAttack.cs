@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.Rendering;
 
 public class BossMeleeAttack : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class BossMeleeAttack : MonoBehaviour
     [SerializeField] Animator Anim;
     [SerializeField] float normalAttackTriggerDistance = 2f; // Distance threshold for triggering normal attack
     [SerializeField] float upAttackTriggerDistance = 3f; // Distance threshold for triggering attack up
+   
 
     bool canAttack = true;
     bool isCharging = false;
@@ -35,6 +37,7 @@ public class BossMeleeAttack : MonoBehaviour
             {
                 yield return new WaitForSeconds(attackCooldown);
                 CheckAndStartCharge();
+                Debug.Log("Is Checking");
             }
             yield return null;
         }
@@ -42,6 +45,8 @@ public class BossMeleeAttack : MonoBehaviour
 
     void CheckAndStartCharge()
     {
+
+
         // Calculate the distance between the boss's HitPointLeft and the player
         float distanceToPlayerLeft = Vector2.Distance(HitPointLeft.position, player.position);
 
@@ -49,9 +54,10 @@ public class BossMeleeAttack : MonoBehaviour
         float distanceToPlayerUp = Vector2.Distance(HitPointUp.position, player.position);
 
         // If the player is within range for a normal attack, start charging
-        if (distanceToPlayerLeft < normalAttackTriggerDistance)
+        if (distanceToPlayerLeft  < normalAttackTriggerDistance)
         {
             StartCharge(HitPointLeft);
+            Debug.Log("AttackingNormal");
         }
         // If the player is within range for an attack up, start charging
         else if (distanceToPlayerUp < upAttackTriggerDistance)
