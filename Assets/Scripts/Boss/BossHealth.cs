@@ -8,10 +8,10 @@ public class BossHealth : MonoBehaviour
 {
     [SerializeField] int maxHealth = 100;
     [SerializeField] int currentHealth;
-
+    public BossMeleeAttack BossMeleeAttack;
     [SerializeField] private GameObject DoorPrefab;
     [SerializeField] private GameObject DashPrefab;
-    [SerializeField] private GameObject HealthSLider;
+    [SerializeField] private GameObject HealthSlider;
     [SerializeField] private GameObject HealthText;
 
     [SerializeField] float rageThresholdPercentage = 0.3f; // Rage mode triggers when health drops below this percentage
@@ -19,13 +19,14 @@ public class BossHealth : MonoBehaviour
     public Slider healthSlider; // Reference to the Slider UI component
     public TextMeshProUGUI healthText; // Reference to the TextMeshPro text component
 
-    private bool isRageMode = false; // Flag to track if the boss is in rage mode
+    public bool isRageMode = false; // Flag to track if the boss is in rage mode
 
     void Start()
     {
+        BossMeleeAttack = GetComponent<BossMeleeAttack>();
         currentHealth = maxHealth;
         UpdateHealthUI();
-        HealthSLider.SetActive(true);
+        HealthSlider.SetActive(true);
         HealthText.SetActive(true);
     }
 
@@ -57,7 +58,7 @@ public class BossHealth : MonoBehaviour
         Destroy(gameObject);
 
         DoorPrefab.SetActive(false);
-        HealthSLider.SetActive(false);
+        HealthSlider.SetActive(false);
         HealthText.SetActive(false);
 
         if (DashPrefab != null)
@@ -70,7 +71,12 @@ public class BossHealth : MonoBehaviour
     {
         // Optional: Implement rage mode behavior here (e.g., increase attack power, change behavior, etc.)
         isRageMode = true;
-        Debug.Log("Entering Rage Mode!");
+        BossMeleeAttack.attackCooldown = 0.9f;
+        BossMeleeAttack.chargeTime = 0.9f;
+
+        
+
+
     }
 
     void UpdateHealthUI()
