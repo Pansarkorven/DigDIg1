@@ -30,11 +30,11 @@ public class LevelManager : MonoBehaviour
 
     public void LoadScene(string sceneName, string transitionName)
     {
-        StartCoroutine(LoadSceneAsync(sceneName, transitionName));
+        //StartCoroutine(LoadSceneAsync(sceneName, transitionName));
     }
 
-    private IEnumerator //LoadSceneAsync(string sceneName, string transitionName)
-    {
-        //Scenetransition transition = transitions.First(t =< transitionContainer.name )
-    }
+    //private IEnumerator //loadsceneasync(string scenename, string transitionname)
+    //{
+    //    Scenetransition transition = transitions.First(t =< transitionContainer.name)
+    //}
 }
