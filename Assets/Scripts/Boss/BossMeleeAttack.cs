@@ -7,8 +7,8 @@ public class BossMeleeAttack : MonoBehaviour
     [SerializeField] int attackDamage = 1;
     [SerializeField] float attackRange = 2f;
     [SerializeField] LayerMask playerLayer;
-    [SerializeField] float attackCooldown = 2f;
-    [SerializeField] float chargeTime = 1.5f;
+    public float attackCooldown = 2f;
+    public float chargeTime = 1.5f;
     [SerializeField] Transform HitPointLeft;
     [SerializeField] Transform HitPointUp;
     [SerializeField] Animator Anim;
@@ -23,7 +23,7 @@ public class BossMeleeAttack : MonoBehaviour
     Transform player;
 
     void Start()
-    {
+    {   
         bossMove = GetComponent<BossFollowPlayer>();
         player = GameObject.FindGameObjectWithTag("Player").transform; // Assuming player is tagged as "Player"
         StartCoroutine(AttackRoutine());
