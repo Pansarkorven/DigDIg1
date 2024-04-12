@@ -13,6 +13,7 @@ public class BossHealth : MonoBehaviour
     [SerializeField] private GameObject DashPrefab;
     [SerializeField] private GameObject HealthSlider;
     [SerializeField] private GameObject HealthText;
+    [SerializeField] private GameObject ExitPrefab;
 
     [SerializeField] float rageThresholdPercentage = 0.3f; // Rage mode triggers when health drops below this percentage
 
@@ -54,10 +55,11 @@ public class BossHealth : MonoBehaviour
 
     void Die()
     {
-        // Optional: Implement death behavior here (e.g., play death animation, trigger level completion, etc.)
+
         Destroy(gameObject);
 
         DoorPrefab.SetActive(false);
+        ExitPrefab.SetActive(true);
         HealthSlider.SetActive(false);
         HealthText.SetActive(false);
 
@@ -65,6 +67,13 @@ public class BossHealth : MonoBehaviour
         {
             DashPrefab.SetActive(true);
         }
+
+        if (ExitPrefab != null)
+        {
+            ExitPrefab.SetActive(false);
+        }
+
+
     }
 
     void EnterRageMode()
@@ -72,7 +81,7 @@ public class BossHealth : MonoBehaviour
         // Optional: Implement rage mode behavior here (e.g., increase attack power, change behavior, etc.)
         isRageMode = true;
         BossMeleeAttack.attackCooldown = 0.9f;
-        BossMeleeAttack.chargeTime = 0.9f;
+        BossMeleeAttack.chargeTime = 1.5f;
 
         
 
