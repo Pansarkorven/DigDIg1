@@ -15,17 +15,20 @@ public class MainAttackScript : MonoBehaviour
     [SerializeField] float WhenAttackUp = 6;
     [SerializeField] Transform PlayerTransform;
     [SerializeField] float PlayerPosition;
-    
-    
+    [SerializeField] MainCharacterController characterController;
+
 
     bool AttackUpCehck = false;
-    private bool isAttacking = false;
+    [SerializeField] public bool isAttacking = false;
     [SerializeField] float attackCooldown = 0.5f; // Adjust as needed
 
     void Start()
     {
         PlayerTransform = transform;
         animator = GetComponent<Animator>();
+       characterController = GetComponent<MainCharacterController>();
+        
+        
     }
 
     void Update()
@@ -51,12 +54,22 @@ public class MainAttackScript : MonoBehaviour
         { 
          AttackUpCehck= false;
         }
-        
+        if (isAttacking == true)
+        {
+            characterController.StopMove();
+            
+        }
+        else
+        {
+            characterController.AllowsMove();
+        }
+
     }
 
     IEnumerator PerformAttack()
     {
         isAttacking = true;
+        
 
         // Perform the melee attack based on the character's direction
         if (IsFacingRight())
@@ -78,6 +91,7 @@ public class MainAttackScript : MonoBehaviour
     IEnumerator PerformAttackUp()
     {
         isAttacking = true;
+       
         AttackUp();
         animator.SetTrigger("AttackUp");
         yield return new WaitForSeconds(attackCooldown);
@@ -92,7 +106,7 @@ public class MainAttackScript : MonoBehaviour
         {
             enemy.GetComponent<BossHealth>().TakeDamage(attackDamage);
         }
-     
+        
     }
 
     void AttackUp()
@@ -104,6 +118,13 @@ public class MainAttackScript : MonoBehaviour
             enemy.GetComponent<BossHealth>().TakeDamage(attackDamage);
         }
         Debug.Log("slår up");
+        
+    }
+
+    private IEnumerator StartTimer(float MoveAgain)
+    {
+        yield return new WaitForSeconds(MoveAgain);
+
     }
 
     bool IsFacingRight()

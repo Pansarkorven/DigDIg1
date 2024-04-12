@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
 
 public class MainCharacterController : MonoBehaviour
 {
@@ -15,6 +16,10 @@ public class MainCharacterController : MonoBehaviour
 
     public bool canDash = false;
     bool isDashing;
+    
+    public bool CanMove;
+    [SerializeField] public bool IsAttack;
+
     [SerializeField] float dashingPower = 4f;
     [SerializeField] float dashingTime = 0.1f;
     [SerializeField] float dashingCooldown = 7f;
@@ -28,28 +33,35 @@ public class MainCharacterController : MonoBehaviour
     [SerializeField] float CoyoteTime = 0.2f;
     [SerializeField] float CoyoteTimeCounter;
 
+    
+
     // Update is called once per frame
 
     private void Start()
     {
         Anim = GetComponent<Animator>();
+        AllowsMove();
+
+        //bool value = AtC.isAttacking;
     }
     void Update()
     {
-        horizontal = Input.GetAxisRaw("Horizontal");
-
+        if (IsAttack == false)
+        {
+            horizontal = Input.GetAxisRaw("Horizontal");
+        }
         if (isDashing)
         {
             return;
         }
 
-        if (IsGrounded()) 
+        if (IsGrounded())
         {
-           CoyoteTimeCounter = CoyoteTime;
+            CoyoteTimeCounter = CoyoteTime;
         }
-        else 
+        else
         {
-           CoyoteTimeCounter -= Time.deltaTime;
+            CoyoteTimeCounter -= Time.deltaTime;
         }
 
         if (Input.GetKeyDown(KeyCode.LeftShift) && horizontal != 0)
@@ -61,7 +73,7 @@ public class MainCharacterController : MonoBehaviour
             isRunning = false;
         }
 
-        if (Input.GetButtonDown("Jump") && CoyoteTimeCounter > 0f )
+        if (Input.GetButtonDown("Jump") && CoyoteTimeCounter > 0f)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
             Anim.SetTrigger("Jump");
@@ -82,6 +94,7 @@ public class MainCharacterController : MonoBehaviour
         if (horizontal != 0)
         {
             Anim.SetBool("IsRunning", true);
+            
         }
         else
         {
@@ -95,6 +108,8 @@ public class MainCharacterController : MonoBehaviour
         }
 
         Flip();
+
+
     }
 
     private void FixedUpdate()
@@ -131,6 +146,20 @@ public class MainCharacterController : MonoBehaviour
     }
 
     
+    public void AllowsMove()
+    {
+        IsAttack = false;
+        
+    }
+
+    public void StopMove()
+    {
+        
+        IsAttack = true; 
+        horizontal = 0;
+    }
+
+   
 
     private void Flip()
     {
