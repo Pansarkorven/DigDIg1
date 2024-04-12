@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections;
-using UnityEngine.Rendering;
 
 public class BossMeleeAttack : MonoBehaviour
 {
@@ -22,10 +21,17 @@ public class BossMeleeAttack : MonoBehaviour
     BossFollowPlayer bossMove;
     Transform player;
 
+    void Awake()
+    {
+        bossMove = GetComponent<BossFollowPlayer>();
+
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
+
     void Start()
     {   
-        bossMove = GetComponent<BossFollowPlayer>();
-        player = GameObject.FindGameObjectWithTag("Player").transform; // Assuming player is tagged as "Player"
+        // player = GameObject.FindGameObjectWithTag("Player").transform; // Assuming player is tagged as "Player"
+
         StartCoroutine(AttackRoutine());
     }
 
@@ -81,22 +87,34 @@ public class BossMeleeAttack : MonoBehaviour
         Debug.Log("Start Swinging");
     }
 
+    IEnumerator AttackHitbox(Transform attackPoint)
+    {
+        bool PlayerHit = false;
+        while (!PlayerHit && isCharging)
+        {
+            
+            // Perform the attack logic
+            Collider2D[] hitPlayers = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, playerLayer);
+
+            foreach (Collider2D player in hitPlayers)
+            {
+                PlayerHit = true;
+                //player.GetComponent<Health>().TakeDamage(attackDamage);
+                Debug.Log(player + " is hit!");
+                // You might want to play an attack animation or perform other actions here
+            }
+            yield return null;
+        }
+    }
     IEnumerator Attack(Transform attackPoint)
     {
-        yield return new WaitForSeconds(chargeTime);
+        StartCoroutine(AttackHitbox(attackPoint));
 
+        yield return new WaitForSeconds(chargeTime);
         // Resume boss movement when the attack is executed
         bossMove.StartMoving();
+        player.GetComponent<Health>().TakeDamage(attackDamage);
 
-        // Perform the attack logic
-        Collider2D[] hitPlayers = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, playerLayer);
-
-        foreach (Collider2D player in hitPlayers)
-        {
-            player.GetComponent<Health>().TakeDamage(attackDamage);
-            Debug.Log(player + " is hit!");
-            // You might want to play an attack animation or perform other actions here
-        }
 
         // Start the cooldown before the boss can attack again
         StartCoroutine(ResetAttackCooldown());

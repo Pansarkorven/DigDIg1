@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -14,6 +15,14 @@ public class OpenableDoor : Interaction
     private SpriteRenderer spriteRenderer; 
     private BoxCollider2D doorCollider; 
     private bool canMove = true;
+
+    Animator anim;
+
+
+
+   
+
+
 
     public override void Interact() //
     {
@@ -55,5 +64,6 @@ public class OpenableDoor : Interaction
         spriteRenderer = GetComponent<SpriteRenderer>();
         doorCollider = GetComponent<BoxCollider2D>(); 
         spriteRenderer.sprite = closedSprite;
+        anim = GetComponent<Animator>();
     }
 }
