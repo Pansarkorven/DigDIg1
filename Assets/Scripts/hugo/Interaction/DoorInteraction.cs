@@ -31,7 +31,7 @@ public class OpenableDoor : Interaction
         anim.SetTrigger("OpenDoor");
 
         // Vänta på att animationen ska slutföras
-        yield return new WaitForSeconds(0.85f);
+        yield return new WaitForSeconds(1.0625f);
 
         // Öppna dörren
         if (doorObject != null)
