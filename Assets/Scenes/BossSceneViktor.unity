@@ -858,6 +858,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1346c3aab0785214eaf185e10a983ac4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zoom: 0
+  zoomMultiplier: 4
+  minZoom: 1
+  maxZoom: 25
+  velocity: 0
+  smoothTime: 0.25
   cam: {fileID: 535683650}
 --- !u!114 &535683654
 MonoBehaviour:

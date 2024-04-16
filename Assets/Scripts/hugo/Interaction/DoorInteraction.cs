@@ -46,7 +46,8 @@ public class OpenableDoor : Interaction
             while (elapsedTime < 1f) // hur länge innan dörren ska sluta röra sig
             {
                 doorObject.transform.position = Vector3.Lerp(initialPosition, targetPosition, elapsedTime);
-                spriteRenderer.sprite = openSprite; // byt sprite vid movement
+                //spriteRenderer.sprite = openSprite; // byt sprite vid movement
+                anim.SetTrigger("OpenDoor");
                 elapsedTime += Time.deltaTime * moveSpeed;
                 yield return null;
             }
