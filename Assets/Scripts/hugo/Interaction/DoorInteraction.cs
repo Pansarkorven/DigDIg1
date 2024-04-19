@@ -9,61 +9,53 @@ public class OpenableDoor : Interaction
     public GameObject doorObject; // referäns till dörren
     public float openPositionY = 2.0f; // hur långt dörren ska röra sig
     public float moveSpeed = 0.2f; // fart
-    public Sprite openSprite; // sprite för öppem
-    public Sprite closedSprite; // sprite för stängd
 
-    private SpriteRenderer spriteRenderer; 
-    private BoxCollider2D doorCollider; 
+    private SpriteRenderer spriteRenderer;
+    private BoxCollider2D doorCollider;
     private bool canMove = true;
+    private Animator anim;
 
-    Animator anim;
-
-
-
-   
-
-
-
-    public override void Interact() //
+    public override void Interact()
     {
         if (canMove)
         {
-            StartCoroutine(MoveDoor()); // vid interact öppna dörren
+            StartCoroutine(OpenDoorCoroutine());
         }
     }
 
-    private IEnumerator MoveDoor() // det här är vad öppna dörren innebär
+    private IEnumerator OpenDoorCoroutine()
     {
+        if (anim == null)
+            yield break;
+
+        anim.SetTrigger("OpenDoor");
+
+        // Vänta på att animationen ska slutföras
+        yield return new WaitForSeconds(1.0625f);
+
+        // Öppna dörren
         if (doorObject != null)
         {
-            canMove = false;
-
             Vector3 initialPosition = doorObject.transform.position; // startar position
             Vector3 targetPosition = new Vector3(initialPosition.x, initialPosition.y + openPositionY, initialPosition.z); // target positionen
 
-            float elapsedTime = 0f; // tid
+            float elapsedTime = 0f;
 
             while (elapsedTime < 1f) // hur länge innan dörren ska sluta röra sig
             {
                 doorObject.transform.position = Vector3.Lerp(initialPosition, targetPosition, elapsedTime);
-                spriteRenderer.sprite = openSprite; // byt sprite vid movement
                 elapsedTime += Time.deltaTime * moveSpeed;
                 yield return null;
             }
 
             doorObject.transform.position = targetPosition;
         }
-        else
-        {
-            Debug.LogError("dörren är borta");
-        }
     }
 
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        doorCollider = GetComponent<BoxCollider2D>(); 
-        spriteRenderer.sprite = closedSprite;
-        anim = GetComponent<Animator>();
+        doorCollider = GetComponent<BoxCollider2D>();
+        anim = GetComponent<Animator>(); // Hämta Animator-komponenten när spelet börjar
     }
 }

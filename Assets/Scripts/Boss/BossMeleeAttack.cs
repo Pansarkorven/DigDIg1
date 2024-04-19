@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections;
-
 public class BossMeleeAttack : MonoBehaviour
 {
     [SerializeField] int attackDamage = 1;
@@ -8,12 +7,9 @@ public class BossMeleeAttack : MonoBehaviour
     [SerializeField] LayerMask playerLayer;
     public float attackCooldown = 2f;
     public float chargeTime = 1.5f;
-    [SerializeField] Transform HitPointLeft;
-    [SerializeField] Transform HitPointUp;
+    [SerializeField] Collider2D normalAttackTrigger; // Reference to the pre-existing trigger collider for normal attack
+    [SerializeField] Collider2D upAttackTrigger; // Reference to the pre-existing trigger collider for up attack
     [SerializeField] Animator Anim;
-    [SerializeField] float normalAttackTriggerDistance = 2f; // Distance threshold for triggering normal attack
-    [SerializeField] float upAttackTriggerDistance = 3f; // Distance threshold for triggering attack up
-   
 
     bool canAttack = true;
     bool isCharging = false;
@@ -24,14 +20,11 @@ public class BossMeleeAttack : MonoBehaviour
     void Awake()
     {
         bossMove = GetComponent<BossFollowPlayer>();
-
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     void Start()
-    {   
-        // player = GameObject.FindGameObjectWithTag("Player").transform; // Assuming player is tagged as "Player"
-
+    {
         StartCoroutine(AttackRoutine());
     }
 
@@ -43,7 +36,6 @@ public class BossMeleeAttack : MonoBehaviour
             {
                 yield return new WaitForSeconds(attackCooldown);
                 CheckAndStartCharge();
-                Debug.Log("Is Checking");
             }
             yield return null;
         }
@@ -51,25 +43,15 @@ public class BossMeleeAttack : MonoBehaviour
 
     void CheckAndStartCharge()
     {
-
-
-        // Calculate the distance between the boss's HitPointLeft and the player
-        float distanceToPlayerLeft = Vector2.Distance(HitPointLeft.position, player.position);
-
-        // Calculate the distance between the boss's HitPointUp and the player
-        float distanceToPlayerUp = Vector2.Distance(HitPointUp.position, player.position);
-
         // If the player is within range for a normal attack, start charging
-        if (distanceToPlayerLeft  < normalAttackTriggerDistance)
+        if (normalAttackTrigger.IsTouchingLayers(playerLayer))
         {
-            StartCharge(HitPointLeft);
-            Debug.Log("AttackingNormal");
+            StartCharge(normalAttackTrigger.transform);
         }
         // If the player is within range for an attack up, start charging
-        else if (distanceToPlayerUp < upAttackTriggerDistance)
+        else if (upAttackTrigger.IsTouchingLayers(playerLayer))
         {
-            StartCharge(HitPointUp);
-            Debug.Log("attackingUp");
+            StartCharge(upAttackTrigger.transform);
         }
     }
 
@@ -79,46 +61,40 @@ public class BossMeleeAttack : MonoBehaviour
         Anim.SetTrigger("BossAttacking");
         isCharging = true;
 
-        // Invoke the actual attack after the charging duration
-        StartCoroutine(Attack(attackPoint));
+        StartCoroutine(Attack());
 
-        // Set canAttack to false only after invoking the Attack method
         canAttack = false;
-        Debug.Log("Start Swinging");
     }
 
-    IEnumerator AttackHitbox(Transform attackPoint)
+    IEnumerator Attack()
     {
-        bool PlayerHit = false;
-        while (!PlayerHit && isCharging)
+        Anim.SetTrigger("BossAttacking");
+
+       
+        yield return new WaitForSeconds(1);
+
+  
+        Collider2D[] hitPlayers = Physics2D.OverlapCircleAll(normalAttackTrigger.transform.position, attackRange, playerLayer);
+
+       
+        if (hitPlayers.Length > 0)
         {
-            
-            // Perform the attack logic
-            Collider2D[] hitPlayers = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, playerLayer);
-
-            foreach (Collider2D player in hitPlayers)
+            foreach (Collider2D playerCollider in hitPlayers)
             {
-                PlayerHit = true;
-                //player.GetComponent<Health>().TakeDamage(attackDamage);
-                Debug.Log(player + " is hit!");
-                // You might want to play an attack animation or perform other actions here
+                if (playerCollider.IsTouching(normalAttackTrigger))
+                {
+                    playerCollider.GetComponent<Health>().TakeDamage(attackDamage);
+                    Debug.Log(playerCollider + " is hit!");
+                }
             }
-            yield return null;
         }
-    }
-    IEnumerator Attack(Transform attackPoint)
-    {
-        StartCoroutine(AttackHitbox(attackPoint));
+        yield return new WaitForSeconds(1);
 
-        yield return new WaitForSeconds(chargeTime);
-        // Resume boss movement when the attack is executed
+        // Resume boss movement
         bossMove.StartMoving();
-        player.GetComponent<Health>().TakeDamage(attackDamage);
 
-
-        // Start the cooldown before the boss can attack again
+        // Reset attack cooldown
         StartCoroutine(ResetAttackCooldown());
-        Debug.Log("Swing Sword");
         isCharging = false;
     }
 
@@ -126,24 +102,5 @@ public class BossMeleeAttack : MonoBehaviour
     {
         yield return new WaitForSeconds(attackCooldown);
         canAttack = true;
-    }
-
-    void OnDrawGizmosSelected()
-    {
-        // Visualize the attack range in the scene view for HitPointLeft
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(HitPointLeft.position, attackRange);
-
-        // Visualize the attack range in the scene view for HitPointUp
-        Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(HitPointUp.position, attackRange);
-
-        //// Visualize the normal attack trigger distance for HitPointLeft
-        //Gizmos.color = Color.green;
-        //Gizmos.DrawWireSphere(transform.position, normalAttackTriggerDistance);
-
-        //// Visualize the attack up trigger distance for HitPointUp
-        //Gizmos.color = Color.yellow;
-        //Gizmos.DrawWireSphere(transform.position, upAttackTriggerDistance);
     }
 }
