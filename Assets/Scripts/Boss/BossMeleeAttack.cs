@@ -90,7 +90,7 @@ public class BossMeleeAttack : MonoBehaviour
         }
         yield return new WaitForSeconds(1);
 
-        // Resume boss movement
+        // 
         bossMove.StartMoving();
 
         // Reset attack cooldown

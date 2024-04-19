@@ -8,6 +8,7 @@ public class MainAttackScript : MonoBehaviour
     [SerializeField] float attackRange = 0.5f;
     [SerializeField] int attackDamage = 1;
     [SerializeField] LayerMask enemyLayer;
+    [SerializeField] LayerMask WallLayer;
     [SerializeField] Transform attackPoint;
     [SerializeField] Transform attackPointUp;
     [SerializeField] Animator animator;
@@ -27,6 +28,7 @@ public class MainAttackScript : MonoBehaviour
         PlayerTransform = transform;
         animator = GetComponent<Animator>();
        characterController = GetComponent<MainCharacterController>();
+       
         
         
     }
@@ -100,9 +102,10 @@ public class MainAttackScript : MonoBehaviour
 
     void AttackSide()
     {
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
+        LayerMask DamageLayers = enemyLayer | WallLayer;
+        Collider2D[] HitStuff = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, DamageLayers);
 
-        foreach (Collider2D enemy in hitEnemies)
+        foreach (Collider2D enemy in HitStuff)
         {
             enemy.GetComponent<BossHealth>().TakeDamage(attackDamage);
         }
@@ -111,9 +114,10 @@ public class MainAttackScript : MonoBehaviour
 
     void AttackUp()
     {
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPointUp.position, attackRange, enemyLayer);
+        LayerMask DamageLayers = enemyLayer | WallLayer;
+        Collider2D[] HitStuff = Physics2D.OverlapCircleAll(attackPointUp.position, attackRange, DamageLayers);
 
-        foreach (Collider2D enemy in hitEnemies)
+        foreach (Collider2D enemy in HitStuff)
         {
             enemy.GetComponent<BossHealth>().TakeDamage(attackDamage);
         }
