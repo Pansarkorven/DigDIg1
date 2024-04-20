@@ -18,6 +18,7 @@ public class VCam : MonoBehaviour
         if (other.CompareTag("Player") && !other.isTrigger)
         {
             virtualCam.SetActive(false);
+
         }
     }
 }
