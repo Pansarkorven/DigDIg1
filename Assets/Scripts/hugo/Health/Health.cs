@@ -16,7 +16,7 @@ public class Health : MonoBehaviour
         CurrentHealth = MaxHealth;
     }
 
-    public void FixedUpdate()
+    public void HpAnimation()
     {
         if (CurrentHealth > 5)
         {
@@ -47,7 +47,7 @@ public class Health : MonoBehaviour
     public void TakeDamage(int amount)
     {
         CurrentHealth -= amount;
-
+        HpAnimation();
         if (CurrentHealth <= 0)
         {
             Debug.Log(" du dog noob ");
@@ -68,6 +68,7 @@ public class Health : MonoBehaviour
     public void Heal(int amount)
     {
         CurrentHealth += amount;
+        HpAnimation();
 
         if (CurrentHealth > MaxHealth)
         {
