@@ -90256,18 +90256,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2922377082886437161, guid: b5d908a132de2da4080254710f67ecaf, type: 3}
-      propertyPath: IsAttack
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5029798198549197820, guid: b5d908a132de2da4080254710f67ecaf, type: 3}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5029798198549197820, guid: b5d908a132de2da4080254710f67ecaf, type: 3}
-      propertyPath: m_SortingOrder
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 5608177151394349038, guid: b5d908a132de2da4080254710f67ecaf, type: 3}
       propertyPath: m_Name
       value: MainCharachter
@@ -90311,14 +90299,6 @@ PrefabInstance:
     - target: {fileID: 6601384980590664542, guid: b5d908a132de2da4080254710f67ecaf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9113943438070410594, guid: b5d908a132de2da4080254710f67ecaf, type: 3}
-      propertyPath: attackCooldown
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9113943438070410594, guid: b5d908a132de2da4080254710f67ecaf, type: 3}
-      propertyPath: WallLayer.m_Bits
-      value: 32768
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -8,17 +8,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 453211994359097470, guid: 3ca73c034757fc34ba79629d1022f044, type: 3}
+      propertyPath: IsAttack
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5818444927481691189, guid: 3ca73c034757fc34ba79629d1022f044, type: 3}
+      propertyPath: attackCooldown
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5818444927481691189, guid: 3ca73c034757fc34ba79629d1022f044, type: 3}
+      propertyPath: WallLayer.m_Bits
+      value: 32768
+      objectReference: {fileID: 0}
     - target: {fileID: 7138276837051477689, guid: 3ca73c034757fc34ba79629d1022f044, type: 3}
       propertyPath: m_Name
       value: Player Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 7712714809512616619, guid: 3ca73c034757fc34ba79629d1022f044, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8455696572011563529, guid: 3ca73c034757fc34ba79629d1022f044, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.3
+      value: 4.4
       objectReference: {fileID: 0}
     - target: {fileID: 8455696572011563529, guid: 3ca73c034757fc34ba79629d1022f044, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -27.3
+      value: -1.4
       objectReference: {fileID: 0}
     - target: {fileID: 8455696572011563529, guid: 3ca73c034757fc34ba79629d1022f044, type: 3}
       propertyPath: m_LocalPosition.z
