@@ -28,9 +28,7 @@ public class MainAttackScript : MonoBehaviour
         PlayerTransform = transform;
         animator = GetComponent<Animator>();
        characterController = GetComponent<MainCharacterController>();
-       
-        
-        
+
     }
 
     void Update()
@@ -94,7 +92,7 @@ public class MainAttackScript : MonoBehaviour
        
         AttackUp();
         animator.SetTrigger("AttackUp");
-        yield return new WaitForSeconds(attackCooldown - 0.4f);
+        yield return new WaitForSeconds(attackCooldown);
         isAttacking = false;
     }
 
