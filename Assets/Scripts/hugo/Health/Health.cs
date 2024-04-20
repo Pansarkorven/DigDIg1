@@ -4,8 +4,9 @@ using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
-    public Animator Animation;
-    public int MaxHealth = 9;
+    public Animator Anim;
+    [SerializeField] Animator AnimHealth;
+    public int MaxHealth = 6;
     public int CurrentHealth;
     public GameObject Player = null;
     
@@ -15,6 +16,34 @@ public class Health : MonoBehaviour
         CurrentHealth = MaxHealth;
     }
 
+    public void FixedUpdate()
+    {
+        if (CurrentHealth > 5)
+        {
+            AnimHealth.SetTrigger("Health1");
+        }
+        if (CurrentHealth > 4)
+        {
+            AnimHealth.SetTrigger("Health2");
+        }
+        if (CurrentHealth > 3)
+        {
+            AnimHealth.SetTrigger("Health3");
+        }
+        if (CurrentHealth > 2)
+        {
+            AnimHealth.SetTrigger("Health4");
+        }
+        if (CurrentHealth > 1)
+        {
+            AnimHealth.SetTrigger("Health5");
+        }
+        if (CurrentHealth > 0)
+        {
+            AnimHealth.SetTrigger("Health6");
+        }
+    }
+
     public void TakeDamage(int amount)
     {
         CurrentHealth -= amount;
@@ -22,7 +51,7 @@ public class Health : MonoBehaviour
         if (CurrentHealth <= 0)
         {
             Debug.Log(" du dog noob ");
-            Animation.SetBool("IsDead", true);
+            Anim.SetBool("IsDead", true);
             Player.GetComponent<MainCharacterController>().enabled = false;
             StartCoroutine(LoadDeathScreenAfterDelay(2f));
         }
@@ -33,6 +62,8 @@ public class Health : MonoBehaviour
         yield return new WaitForSeconds(delay);
         SceneManager.LoadScene("DeathScreen");
     }
+
+    
 
     public void Heal(int amount)
     {

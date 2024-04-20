@@ -90386,6 +90386,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48423a773eb429d499dc970dde2f804b, type: 3}
+--- !u!95 &1776351212 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8537525297100910146, guid: b5d908a132de2da4080254710f67ecaf, type: 3}
+  m_PrefabInstance: {fileID: 2030277727}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1795431632 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1125747202643625562, guid: 48423a773eb429d499dc970dde2f804b, type: 3}
@@ -90523,6 +90528,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5267807032560208786, guid: b5d908a132de2da4080254710f67ecaf, type: 3}
+      propertyPath: Anim
+      value: 
+      objectReference: {fileID: 1776351212}
+    - target: {fileID: 5267807032560208786, guid: b5d908a132de2da4080254710f67ecaf, type: 3}
+      propertyPath: AnimHealth
+      value: 
+      objectReference: {fileID: 900428542}
     - target: {fileID: 5608177151394349038, guid: b5d908a132de2da4080254710f67ecaf, type: 3}
       propertyPath: m_Name
       value: MainCharachter
