@@ -21,7 +21,7 @@ public class MainAttackScript : MonoBehaviour
 
     bool AttackUpCehck = false;
     [SerializeField] public bool isAttacking = false;
-    [SerializeField] float attackCooldown = 0.5f; // Adjust as needed
+    [SerializeField] float attackCooldown = 0.5f;
 
     void Start()
     {
@@ -73,16 +73,14 @@ public class MainAttackScript : MonoBehaviour
         isAttacking = true;
         
 
-        // Perform the melee attack based on the character's direction
         if (IsFacingRight())
         {
             AttackSide();
-            // Trigger the attack animation
             animator.SetTrigger("Attack");
         }
         else
         {
-            AttackSide(); // You can replace this with a different animation for attacking to the left
+            AttackSide(); 
             animator.SetTrigger("Attack");
         }
 
@@ -96,7 +94,7 @@ public class MainAttackScript : MonoBehaviour
        
         AttackUp();
         animator.SetTrigger("AttackUp");
-        yield return new WaitForSeconds(attackCooldown);
+        yield return new WaitForSeconds(attackCooldown - 0.4f);
         isAttacking = false;
     }
 
@@ -107,9 +105,21 @@ public class MainAttackScript : MonoBehaviour
 
         foreach (Collider2D enemy in HitStuff)
         {
-            enemy.GetComponent<BossHealth>().TakeDamage(attackDamage);
+            if (enemy != null)
+            {
+                BossHealth bossHealth = enemy.GetComponent<BossHealth>();
+                if (bossHealth != null)
+                {
+                    bossHealth.TakeDamage(attackDamage);
+                }
+
+                BreakableWall breakableWall = enemy.GetComponent<BreakableWall>();
+                if (breakableWall != null)
+                {
+                    breakableWall.TakeDamage(attackDamage);
+                }
+            }
         }
-        
     }
 
     void AttackUp()
@@ -119,7 +129,20 @@ public class MainAttackScript : MonoBehaviour
 
         foreach (Collider2D enemy in HitStuff)
         {
-            enemy.GetComponent<BossHealth>().TakeDamage(attackDamage);
+            if (enemy != null)
+            {
+                BossHealth bossHealth = enemy.GetComponent<BossHealth>();
+                if (bossHealth != null)
+                {
+                    bossHealth.TakeDamage(attackDamage);
+                }
+
+                BreakableWall breakableWall = enemy.GetComponent<BreakableWall>();
+                if (breakableWall != null)
+                {
+                    breakableWall.TakeDamage(attackDamage);
+                }
+            }
         }
         Debug.Log("slår up");
         
