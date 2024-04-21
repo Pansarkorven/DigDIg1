@@ -8,7 +8,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: HealthBar3
-  m_Speed: 0.65
+  m_Speed: 0.57
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 7143227352911341879}
@@ -60,7 +60,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: HealthBar2
-  m_Speed: 0.65
+  m_Speed: 0.57
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -5690853153561360986}
@@ -155,7 +155,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: HealthBar5
-  m_Speed: 0.65
+  m_Speed: 0.57
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 6204878328588215549}
@@ -257,7 +257,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: HealthBar1
-  m_Speed: 0.65
+  m_Speed: 0.57
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 6553558325799296471}
@@ -290,37 +290,37 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Health3
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Health4
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Health5
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Health6
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Health1
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -367,7 +367,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: HealthBar6
-  m_Speed: 0.65
+  m_Speed: 0.57
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
@@ -418,7 +418,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: HealthBar4
-  m_Speed: 0.65
+  m_Speed: 0.57
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1164236401957841404}
