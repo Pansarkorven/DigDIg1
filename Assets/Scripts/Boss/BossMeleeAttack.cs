@@ -48,7 +48,7 @@ public class BossMeleeAttack : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(30f); // Wait for 30 seconds
+            yield return new WaitForSeconds(10f); // Wait for 30 seconds
             StartDash();
         }
     }
@@ -94,23 +94,24 @@ public class BossMeleeAttack : MonoBehaviour
         yield return new WaitForSeconds(DashStartDelay);
         Debug.Log("Now look if can hit");
 
-        Collider2D[] HitPlayers = Physics2D.OverlapCircleAll(BossHitbox.transform.position, playerLayer);
+        Collider2D[] HitPlayers = Physics2D.OverlapCircleAll(BossHitbox.transform.position,1000.0f, playerLayer);
 
         if (HitPlayers.Length > 0)
         {
             Debug.Log("CheckCLose");
+            foreach(Collider2D col in HitPlayers)
+            {
+                Debug.Log(col.name);
+            }
             foreach (Collider2D playerCollider in HitPlayers)
             {
-                if (playerCollider.IsTouching(BossHitbox))
-                {
-                    Debug.Log("I tutch");
-                    Health playerHealth = playerCollider.GetComponent<Health>();
-                    if (playerHealth != null)
-                    {
-                        playerHealth.TakeDamage(attackDamage);
-                        Debug.Log(playerCollider + " is hit by dash");
-                    }
-                }
+             Debug.Log("I tutch" + playerCollider.name);
+             Health playerHealth = playerCollider.GetComponent<Health>();
+             if (playerHealth != null)
+             {
+                 playerHealth.TakeDamage(attackDamage);
+                 Debug.Log(playerCollider + " is hit by dash");
+             }
             }
         }
         yield return new WaitForSeconds(DashDuration);

@@ -1,0 +1,1008 @@
+fileFormatVersion: 2
+guid: b3cfed343ebee4440b2136249eb7674b
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 190
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_0"
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 212
+        width: 17
+        height: 40
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1d480cb3a7d22b4ca8d01ae64a785d0
+      internalID: 233287402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_1"
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 212
+        width: 17
+        height: 40
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98c128a20266df849a86dbdfb3f61550
+      internalID: -615313373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_2"
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 212
+        width: 17
+        height: 40
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26700d834eb090647a40616f85304929
+      internalID: 1743822197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_3"
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 212
+        width: 17
+        height: 40
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82a9ed600f832ae4aabcfc5a75a298d4
+      internalID: -1614799139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_4"
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 212
+        width: 17
+        height: 41
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6efd53aac0444d4885acb16a74c63ed
+      internalID: -1751691069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_5"
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 212
+        width: 17
+        height: 41
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f289280fda5c934482b4a7b0513cdce
+      internalID: -600659391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_6"
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 211
+        width: 25
+        height: 41
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1b913d64edcf8b438f935554277a2c3
+      internalID: -1759897397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_7"
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 212
+        width: 17
+        height: 40
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 440094c7011478245b6af13ecbab05a1
+      internalID: -2136801263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_8"
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 159
+        width: 18
+        height: 40
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d224dbaef00db94b9acc3257fe0e9be
+      internalID: -761509978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_9"
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 159
+        width: 44
+        height: 36
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7999fe3bbee789419950e16d681851c
+      internalID: 1291709314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_10"
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 159
+        width: 39
+        height: 38
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c0b30d83df6aca4ba00a2f2abe4d9da
+      internalID: -378858757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_11"
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 159
+        width: 20
+        height: 40
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40875a81da7f0144c8607fc5d39e756b
+      internalID: -1737014648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_12"
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 159
+        width: 18
+        height: 40
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 962a5b15eda8ea247b18480ba6fc9440
+      internalID: -1843856334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_13"
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 159
+        width: 28
+        height: 51
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e6754248c4830b4291670e9d2b24698
+      internalID: 1693111623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_14"
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 159
+        width: 28
+        height: 51
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7309ce3ff64fc9c46a9a144182169b7e
+      internalID: 1006561506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_16"
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 159
+        width: 21
+        height: 40
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc7e8cb909759e54b8b941529b3bc283
+      internalID: -595600430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_17"
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 106
+        width: 20
+        height: 40
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 477e3d8ca0e6d0341ba416e9d404d2da
+      internalID: 537674166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_18"
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 106
+        width: 24
+        height: 39
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ba885e9aa3444e459ae20f5cecd3e99
+      internalID: -412304850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_19"
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 109
+        width: 25
+        height: 38
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a57c599b2a076d4a9ed7355a090e6f5
+      internalID: -2057315439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_20"
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 106
+        width: 21
+        height: 38
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3c85e8098cf539468267a0576140959
+      internalID: -1393971898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_21"
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 106
+        width: 17
+        height: 38
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c995baf17fcce7042976f3ec291ed29c
+      internalID: 1496261371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_22"
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 106
+        width: 17
+        height: 40
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5ff307d2e7ec7d4a8d4e54317a0e9f1
+      internalID: -1331726522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_23"
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 109
+        width: 21
+        height: 38
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 445756852895a614690548891f1eebf3
+      internalID: -895931847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_24"
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 106
+        width: 17
+        height: 40
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0de607b8227cb6049ac1bb47d9ec5d01
+      internalID: 58439002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_25"
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 53
+        width: 17
+        height: 40
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89dbf160c18a46b4cb1c677616fa0b90
+      internalID: 1912244649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_26"
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 53
+        width: 18
+        height: 41
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df068ec3352150c4abf1049841f71a3b
+      internalID: 1574921164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_27"
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 53
+        width: 17
+        height: 41
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a85efc8a338c38640ae137eeeeba4b3c
+      internalID: -1750311977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_28"
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 53
+        width: 17
+        height: 41
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d915895ecd2dcb469297153cf3b996d
+      internalID: -163124361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_29"
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 53
+        width: 17
+        height: 37
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84164722e9891ca4fb181576ca167011
+      internalID: 618065441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_30"
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 53
+        width: 20
+        height: 25
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 158781d47863c12438bfc4524c17e053
+      internalID: 904411609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_31"
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 53
+        width: 20
+        height: 28
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cecade4a14bad54ebcf3029863bea33
+      internalID: -1866280748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_32"
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 53
+        width: 20
+        height: 28
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08a3b6e6fda5e2a4ebc63dd2d72835a1
+      internalID: 1478450932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_33"
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 0
+        width: 23
+        height: 25
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3107a11eef98a94088e1d101bf91185
+      internalID: -1441388408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_34"
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 0
+        width: 31
+        height: 20
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12e0cd4e8d5e4054ab2f3d6de4fd42b3
+      internalID: -900380159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_35"
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 39
+        height: 6
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 389221993fd0b334ca89acbe37128efd
+      internalID: -1161201861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_36"
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 0
+        width: 33
+        height: 7
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcff71c0312428a47bde74f41cedc379
+      internalID: -795582562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_37"
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 1
+        width: 6
+        height: 5
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e218e05a095ddeb4a9e77206b1998706
+      internalID: 1457820319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_38"
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 0
+        width: 45
+        height: 8
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7de344a8baeb62f47a35d2016cbb3705
+      internalID: 1905776509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_39"
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 1
+        width: 17
+        height: 43
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c45dce7767331d4793a5b5b1eafd681
+      internalID: -843207804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "digitaltskapande_huvudkarakt\xE4r_Spritesheet_40"
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 1
+        width: 15
+        height: 39
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c943a8c7a52037a42bb190ead1f18a67
+      internalID: -125534207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      "digitaltskapande_huvudkarakt\xE4r_Spritesheet_0": 233287402
+      "digitaltskapande_huvudkarakt\xE4r_Spritesheet_1": -615313373
+      "digitaltskapande_huvudkarakt\xE4r_Spritesheet_10": -378858757
+      "digitaltskapande_huvudkarakt\xE4r_Spritesheet_11": -1737014648
+      "digitaltskapande_huvudkarakt\xE4r_Spritesheet_12": -1843856334
+      "digitaltskapande_huvudkarakt\xE4r_Spritesheet_13": 1693111623
+      "digitaltskapande_huvudkarakt\xE4r_Spritesheet_14": 1006561506
+      "digitaltskapande_huvudkarakt\xE4r_Spritesheet_15": 1171622088
+      "digitaltskapande_huvudkarakt\xE4r_Spritesheet_16": -595600430
+      "digitaltskapande_huvudkarakt\xE4r_Spritesheet_17": 537674166
+      "digitaltskapande_huvudkarakt\xE4r_Spritesheet_18": -412304850
+      "digitaltskapande_huvudkarakt\xE4r_Spritesheet_19": -2057315439
+      "digitaltskapande_huvudkarakt\xE4r_Spritesheet_2": 1743822197
+      "digitaltskapande_huvudkarakt\xE4r_Spritesheet_20": -1393971898
+      "digitaltskapande_huvudkarakt\xE4r_Spritesheet_21": 1496261371
+      "digitaltskapande_huvudkarakt\xE4r_Spritesheet_22": -1331726522
+      "digitaltskapande_huvudkarakt\xE4r_Spritesheet_23": -895931847
+      "digitaltskapande_huvudkarakt\xE4r_Spritesheet_24": 58439002
+      "digitaltskapande_huvudkarakt\xE4r_Spritesheet_25": 1912244649
+      "digitaltskapande_huvudkarakt\xE4r_Spritesheet_26": 1574921164
+      "digitaltskapande_huvudkarakt\xE4r_Spritesheet_27": -1750311977
+      "digitaltskapande_huvudkarakt\xE4r_Spritesheet_28": -163124361
+      "digitaltskapande_huvudkarakt\xE4r_Spritesheet_29": 618065441
+      "digitaltskapande_huvudkarakt\xE4r_Spritesheet_3": -1614799139
+      "digitaltskapande_huvudkarakt\xE4r_Spritesheet_30": 904411609
+      "digitaltskapande_huvudkarakt\xE4r_Spritesheet_31": -1866280748
+      "digitaltskapande_huvudkarakt\xE4r_Spritesheet_32": 1478450932
+      "digitaltskapande_huvudkarakt\xE4r_Spritesheet_33": -1441388408
+      "digitaltskapande_huvudkarakt\xE4r_Spritesheet_34": -900380159
+      "digitaltskapande_huvudkarakt\xE4r_Spritesheet_35": -1161201861
+      "digitaltskapande_huvudkarakt\xE4r_Spritesheet_36": -795582562
+      "digitaltskapande_huvudkarakt\xE4r_Spritesheet_37": 1457820319
+      "digitaltskapande_huvudkarakt\xE4r_Spritesheet_38": 1905776509
+      "digitaltskapande_huvudkarakt\xE4r_Spritesheet_39": -843207804
+      "digitaltskapande_huvudkarakt\xE4r_Spritesheet_4": -1751691069
+      "digitaltskapande_huvudkarakt\xE4r_Spritesheet_40": -125534207
+      "digitaltskapande_huvudkarakt\xE4r_Spritesheet_5": -600659391
+      "digitaltskapande_huvudkarakt\xE4r_Spritesheet_6": -1759897397
+      "digitaltskapande_huvudkarakt\xE4r_Spritesheet_7": -2136801263
+      "digitaltskapande_huvudkarakt\xE4r_Spritesheet_8": -761509978
+      "digitaltskapande_huvudkarakt\xE4r_Spritesheet_9": 1291709314
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -18,27 +18,27 @@ public class Health : MonoBehaviour
 
     public void HpAnimation()
     {
-        if (CurrentHealth > 5)
+        if (CurrentHealth < 7)
         {
             AnimHealth.SetTrigger("Health1");
         }
-        if (CurrentHealth > 4)
+        if (CurrentHealth <6)
         {
             AnimHealth.SetTrigger("Health2");
         }
-        if (CurrentHealth > 3)
+        if (CurrentHealth < 5)
         {
             AnimHealth.SetTrigger("Health3");
         }
-        if (CurrentHealth > 2)
+        if (CurrentHealth < 4)
         {
             AnimHealth.SetTrigger("Health4");
         }
-        if (CurrentHealth > 1)
+        if (CurrentHealth < 3)
         {
             AnimHealth.SetTrigger("Health5");
         }
-        if (CurrentHealth > 0)
+        if (CurrentHealth < 2)
         {
             AnimHealth.SetTrigger("Health6");
         }
