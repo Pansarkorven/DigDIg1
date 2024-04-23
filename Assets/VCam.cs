@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VCam : MonoBehaviour
+public class Vcam : MonoBehaviour
 {
     [SerializeField] GameObject virtualCam;
 
