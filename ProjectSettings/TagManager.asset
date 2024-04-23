@@ -23,6 +23,8 @@ TagManager:
   - OneWayPlatfroms
   - PlayerOnlyPlatfrom
   - boss
+  - BreakableWall
+  - Interatable
   - 
   - 
   - 
@@ -30,12 +32,10 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - TutorialArea1
+  - TutorialArea2
+  - TutorialArea3
+  - TutorialArea4
   - 
   - 
   - 

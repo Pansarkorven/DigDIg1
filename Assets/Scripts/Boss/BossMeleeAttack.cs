@@ -7,9 +7,12 @@ public class BossMeleeAttack : MonoBehaviour
     [SerializeField] LayerMask playerLayer;
     public float attackCooldown = 2f;
     public float chargeTime = 1.5f;
-    [SerializeField] Collider2D normalAttackTrigger; // Reference to the pre-existing trigger collider for normal attack
-    [SerializeField] Collider2D upAttackTrigger; // Reference to the pre-existing trigger collider for up attack
+    [SerializeField] Collider2D normalAttackTrigger;
+    [SerializeField] Collider2D BossHitbox; 
+    [SerializeField] Collider2D upAttackTrigger; 
     [SerializeField] Animator Anim;
+    [SerializeField] float DashStartDelay;
+    [SerializeField] float DashDuration;
 
     bool canAttack = true;
     bool isCharging = false;
@@ -26,6 +29,7 @@ public class BossMeleeAttack : MonoBehaviour
     void Start()
     {
         StartCoroutine(AttackRoutine());
+        StartCoroutine(RepeatedDashCoroutine());
     }
 
     IEnumerator AttackRoutine()
@@ -40,15 +44,21 @@ public class BossMeleeAttack : MonoBehaviour
             yield return null;
         }
     }
+    IEnumerator RepeatedDashCoroutine()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(30f); // Wait for 30 seconds
+            StartDash();
+        }
+    }
 
     void CheckAndStartCharge()
     {
-        // If the player is within range for a normal attack, start charging
         if (normalAttackTrigger.IsTouchingLayers(playerLayer))
         {
             StartCharge(normalAttackTrigger.transform);
         }
-        // If the player is within range for an attack up, start charging
         else if (upAttackTrigger.IsTouchingLayers(playerLayer))
         {
             StartCharge(upAttackTrigger.transform);
@@ -65,7 +75,53 @@ public class BossMeleeAttack : MonoBehaviour
 
         canAttack = false;
     }
+    void StartDash()
+    {
+        Anim.SetTrigger("DashAttack");
 
+        bossMove.StopMoving();
+
+        canAttack = false;
+
+        BossHitbox.isTrigger = true;
+
+        StartCoroutine(DashCollisionCheck());
+        Debug.Log("StartDashing");
+    }
+
+    IEnumerator DashCollisionCheck()
+    {
+        yield return new WaitForSeconds(DashStartDelay);
+        Debug.Log("Now look if can hit");
+
+        Collider2D[] HitPlayers = Physics2D.OverlapCircleAll(BossHitbox.transform.position, playerLayer);
+
+        if (HitPlayers.Length > 0)
+        {
+            Debug.Log("CheckCLose");
+            foreach (Collider2D playerCollider in HitPlayers)
+            {
+                if (playerCollider.IsTouching(BossHitbox))
+                {
+                    Debug.Log("I tutch");
+                    Health playerHealth = playerCollider.GetComponent<Health>();
+                    if (playerHealth != null)
+                    {
+                        playerHealth.TakeDamage(attackDamage);
+                        Debug.Log(playerCollider + " is hit by dash");
+                    }
+                }
+            }
+        }
+        yield return new WaitForSeconds(DashDuration);
+
+        bossMove.StartMoving();
+
+        canAttack = true;
+
+        BossHitbox.isTrigger = false;
+        Debug.Log("Now Stop Dash");
+    }
     IEnumerator Attack()
     {
         Anim.SetTrigger("BossAttacking");
@@ -90,10 +146,8 @@ public class BossMeleeAttack : MonoBehaviour
         }
         yield return new WaitForSeconds(1);
 
-        // Resume boss movement
         bossMove.StartMoving();
 
-        // Reset attack cooldown
         StartCoroutine(ResetAttackCooldown());
         isCharging = false;
     }

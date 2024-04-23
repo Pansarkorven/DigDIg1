@@ -83,7 +83,7 @@ public class BossFollowPlayer : MonoBehaviour
     public void StopMoving()
     {
         canMove = false;
-    }
+    }   
 
     public void StartMoving()
     {
