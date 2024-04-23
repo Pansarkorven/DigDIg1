@@ -59,23 +59,23 @@ public class HealthBar : MonoBehaviour
             }
             else
             {
-                switch (currentIndex)
-                {
-                    case 0:
-                        healthBarImage.sprite = sprite1;
-                        break;
-                    case 1:
-                        healthBarImage.sprite = sprite2;
-                        break;
-                    case 2:
-                        healthBarImage.sprite = sprite3;
-                        break;
-                    case 3:
-                        healthBarImage.sprite = sprite4;
-                        break;
-                    default:
-                        break;
-                }
+                //switch (currentindex)
+                //{
+                //    case 0:
+                //        healthbarimage.sprite = sprite1;
+                //        break;
+                //    case 1:
+                //        healthbarimage.sprite = sprite2;
+                //        break;
+                //    case 2:
+                //        healthbarimage.sprite = sprite3;
+                //        break;
+                //    case 3:
+                //        healthbarimage.sprite = sprite4;
+                //        break;
+                //    default:
+                //        break;
+                //}
             }
         }
     }
