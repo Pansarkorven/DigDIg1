@@ -27,7 +27,7 @@ public class HealthBar : MonoBehaviour
     void Update()
     {
         UpdateSprite();
-        UpdateHP();
+        //UpdateHP();
     }
 
     void UpdateSprite()
@@ -80,26 +80,26 @@ public class HealthBar : MonoBehaviour
         }
     }
 
-    public void UpdateHP()
-    {
-        healthTimer += Time.deltaTime;
-        if (healthTimer >= healthUpdateInterval)
-        {
-            healthTimer -= healthUpdateInterval;
-            if (reference != null)
-            {
-                int currentHealth = reference.CurrentHealth;
-                float fillAmount = (float)currentHealth / (useSpecialHealthBar ? 9f : bombaclat); 
-                if (useSpecialHealthBar)
-                {
-                    FillImage.sprite = SpecialFillSprite;
-                }
-                else
-                {
-                    FillImage.sprite = NormalFillSprite;
-                }
-                FillImage.fillAmount = fillAmount;
-            }
-        }
-    }
+    //public void UpdateHP()
+    //{
+    //    healthTimer += Time.deltaTime;
+    //    if (healthTimer >= healthUpdateInterval)
+    //    {
+    //        healthTimer -= healthUpdateInterval;
+    //        if (reference != null)
+    //        {
+    //            int currentHealth = reference.CurrentHealth;
+    //            float fillAmount = (float)currentHealth / (useSpecialHealthBar ? 9f : bombaclat); 
+    //            if (useSpecialHealthBar)
+    //            {
+    //                FillImage.sprite = SpecialFillSprite;
+    //            }
+    //            else
+    //            {
+    //                FillImage.sprite = NormalFillSprite;
+    //            }
+    //            FillImage.fillAmount = fillAmount;
+    //        }
+    //    }
+    //}
 }
