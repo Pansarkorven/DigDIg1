@@ -20,7 +20,7 @@ public class HealthBar : MonoBehaviour
     public float healthUpdateInterval = 1f;
     public bool useSpecialHealthBar = false;
     private float spriteTimer = 0f;
-    private float healthTimer = 0f;
+   // private float healthTimer = 0f;
     private int currentIndex = 0;
     public float bombaclat = 6f; // behövs 
 

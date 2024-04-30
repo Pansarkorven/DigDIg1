@@ -11,23 +11,26 @@ public class FireballAttack : MonoBehaviour
     public BossHealth bossHealth;
     [SerializeField] float lastAttackTime;
     [SerializeField] float attackCooldown = 5f;
+    [SerializeField] AudioClip attackSound; // Sound to play when attacking
+    [SerializeField] AudioSource audioSource;
 
     void Start()
     {
         bossHealth = GetComponent<BossHealth>();
         inventory = playerObject.GetComponent<Inventory>();
         lastAttackTime = -attackCooldown;
-
+        audioSource = GetComponent<AudioSource>(); // Get AudioSource component
     }
 
     void Update()
     {
-
         if (Time.time - lastAttackTime >= attackCooldown && inventory != null && inventory.HasRanged() && Input.GetMouseButtonDown(0))
         {
+
+            PlayAttackSound();
+
             GameObject newProjectile = Instantiate(projectile, firePosition.position, Quaternion.identity);
             bool isFacingRight = (playerObject.transform.localScale.x > 0);
-            // If not facing right, flip the projectile's scale to aim in the opposite direction
             if (!isFacingRight)
             {
                 Vector3 newScale = newProjectile.transform.localScale;
@@ -35,6 +38,14 @@ public class FireballAttack : MonoBehaviour
                 newProjectile.transform.localScale = newScale;
             }
             lastAttackTime = Time.time;
+        }
+    }
+
+    void PlayAttackSound()
+    {
+        if (audioSource != null && attackSound != null)
+        {
+            audioSource.PlayOneShot(attackSound);
         }
     }
 }

@@ -2,40 +2,52 @@ using UnityEngine;
 
 public class FireballProjectile : MonoBehaviour
 {
-    new private Rigidbody2D rigidbody;
+    private Rigidbody2D rb;
+    private SpriteRenderer spriteRenderer; 
     public float projectileSpeed = 5f;
-
     [SerializeField] int attackDamage = 1;
+    [SerializeField] AudioClip impactSound;
+    [SerializeField] AudioSource audioSource;
 
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
 
-        Vector3 fireballScale = transform.localScale;
-        Vector2 fireballDirection = Vector2.right;
-
-        if (fireballScale.x < 0)
-        {
-            fireballDirection = Vector2.left;
-        }
-
-        rigidbody.velocity = fireballDirection * projectileSpeed;
-
-        Destroy(gameObject, 60f);
+        Vector2 fireballDirection = transform.right;
+        rb.velocity = fireballDirection * projectileSpeed;
     }
 
-
-    public void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        {
+            PlayImpactSound();
+            if (spriteRenderer != null)
+            {
+                spriteRenderer.enabled = false;
+            }
+
+            rb.velocity = Vector2.zero;
+            rb.bodyType = RigidbodyType2D.Static;
+            Destroy(gameObject, 0.1655f);
+        }
+        else if (collision.gameObject.CompareTag("Enemy"))
         {
             BossHealth bossHealth = collision.gameObject.GetComponent<BossHealth>();
             if (bossHealth != null)
             {
                 bossHealth.TakeDamage(attackDamage);
-
             }
             Destroy(gameObject);
+        }
+    }
+
+    void PlayImpactSound()
+    {
+        if (audioSource != null && impactSound != null)
+        {
+            audioSource.PlayOneShot(impactSound);
         }
     }
 }
