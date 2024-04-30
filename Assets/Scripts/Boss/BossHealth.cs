@@ -15,12 +15,12 @@ public class BossHealth : MonoBehaviour
     [SerializeField] private GameObject HealthText;
     [SerializeField] private GameObject ExitPrefab;
 
-    [SerializeField] float rageThresholdPercentage = 0.3f; // Rage mode triggers when health drops below this percentage
+    [SerializeField] float rageThresholdPercentage = 0.3f; 
 
-    public Slider healthSlider; // Reference to the Slider UI component
-    public TextMeshProUGUI healthText; // Reference to the TextMeshPro text component
+    public Slider healthSlider;
+    public TextMeshProUGUI healthText;
 
-    public bool isRageMode = false; // Flag to track if the boss is in rage mode
+    public bool isRageMode = false;
 
     void Start()
     {
@@ -33,23 +33,19 @@ public class BossHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        // Reduce the boss's health by the amount of damage taken
         currentHealth -= damage;
 
-        // Ensure the health doesn't go below zero
         currentHealth = Mathf.Max(currentHealth, 0);
 
-        // Invoke the event when the boss's health changes
         UpdateHealthUI();
 
-        // Check if the boss has been defeated
         if (currentHealth <= 0)
         {
             Die();
         }
         else if (!isRageMode && (float)currentHealth / maxHealth <= rageThresholdPercentage)
         {
-            EnterRageMode(); // Trigger rage mode when health drops below the threshold
+            EnterRageMode();
         }
     }
 
@@ -78,24 +74,17 @@ public class BossHealth : MonoBehaviour
 
     void EnterRageMode()
     {
-        // Optional: Implement rage mode behavior here (e.g., increase attack power, change behavior, etc.)
         isRageMode = true;
         BossMeleeAttack.attackCooldown = 0.9f;
         BossMeleeAttack.chargeTime = 1.5f;
-
-        
-
-
     }
 
     void UpdateHealthUI()
     {
-        // Update the health bar UI
         healthSlider.value = currentHealth;
         healthText.text = "Health: " + currentHealth.ToString();
     }
 
-    // Function to take damage from external sources
     public void TakeDamageFromExternalSource(int damage)
     {
         TakeDamage(damage);
