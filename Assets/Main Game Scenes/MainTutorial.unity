@@ -771,7 +771,7 @@ MonoBehaviour:
   m_text: 'Run (L-Shift)
 
 
-    and blue bar is stamina
+    Blue Bar = Stamina
 
 '
   m_isRightToLeft: 0
@@ -90290,7 +90290,9 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: 13, y: 4}
-      - {x: -27, y: 4}
+      - {x: -13.8, y: 4}
+      - {x: -13.8, y: 5.5}
+      - {x: -27, y: 5.5}
       - {x: -27, y: -5}
       - {x: 13, y: -5}
   m_UseDelaunayMesh: 0
@@ -90404,7 +90406,7 @@ Transform:
   m_GameObject: {fileID: 823600723}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.477777, y: 29.3, z: -10}
+  m_LocalPosition: {x: 2.5616708, y: -0.3341546, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
