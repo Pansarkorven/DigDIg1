@@ -6,9 +6,9 @@ using UnityEngine.Animations;
 public class MainCharacterController : MonoBehaviour
 {
     [SerializeField] float horizontal;
-    public bool isRunning = false; // Flag to indicate if the player is running
-    [SerializeField] float runningSpeed = 12f; // Speed when running
-    [SerializeField] float walkingSpeed = 8f; // Speed when walking
+    public bool isRunning = false;
+    [SerializeField] float runningSpeed = 12f;
+    [SerializeField] float walkingSpeed = 8f; 
     [SerializeField] float jumpingPower = 16f;
     bool isFacingRight = true;
     [SerializeField] Vector2 boxSize = new Vector2(0.5f, 2f);
