@@ -20,6 +20,7 @@ public class MainAttackScript : MonoBehaviour
     [SerializeField] AudioClip[] whooshSound;
     [SerializeField] AudioClip[] hitSound;
     [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioSource audioSourceHit;
 
 
     bool AttackUpCheck = false;
@@ -128,13 +129,13 @@ public class MainAttackScript : MonoBehaviour
 
     void SpelaSlumpLjud()
     {
-        if (audioSource != null && hitSound != null && hitSound.Length > 0)
+        if (audioSourceHit != null && hitSound != null && hitSound.Length > 0)
         {
-            if (!audioSource.isPlaying) 
+            if (!audioSourceHit.isPlaying) 
             { 
                 int randomIndex = Random.Range(0, hitSound.Length);
-                audioSource.clip = hitSound[randomIndex];  
-                audioSource.Play();
+                audioSourceHit.clip = hitSound[randomIndex];
+                audioSourceHit.Play();
             }
         }
     }
@@ -154,30 +155,36 @@ public class MainAttackScript : MonoBehaviour
 
     void AttackUp()
     {
-        LayerMask DamageLayers = enemyLayer | WallLayer;
-        Collider2D[] HitStuff = Physics2D.OverlapCircleAll(attackPointUp.position, attackRange, DamageLayers);
+        StartCoroutine(AttackCoroutine());
+    }
+
+    IEnumerator AttackCoroutine()
+    {
+        Collider2D[] HitStuff = Physics2D.OverlapCircleAll(attackPointUp.position, attackRange, enemyLayer | WallLayer);
 
         foreach (Collider2D enemy in HitStuff)
         {
-            if (enemy != null)
-            {
-                SpelaSlumpLjud();
-                BossHealth bossHealth = enemy.GetComponent<BossHealth>();
-                if (bossHealth != null)
-                {
-                    bossHealth.TakeDamage(attackDamage);
-                }
+            if (enemy == null) continue;
 
-                BreakableWall breakableWall = enemy.GetComponent<BreakableWall>();
-                if (breakableWall != null)
-                {
-                    breakableWall.TakeDamage(attackDamage);
-                }
+            if (enemy.TryGetComponent<BossHealth>(out var bossHealth))
+            {
+                bossHealth.TakeDamage(attackDamage);
+                yield return StartCoroutine(DelayedSound());
             }
+            else if (enemy.TryGetComponent<BreakableWall>(out var breakableWall))
+            {
+                breakableWall.TakeDamage(attackDamage);
+            }
+                yield return StartCoroutine(DelayedSound());
         }
         Debug.Log("slår up");
-        
     }
+    IEnumerator DelayedSound()
+    {
+        yield return new WaitForSeconds(0.679f);
+        SpelaSlumpLjud();
+    }
+
 
     private IEnumerator StartTimer(float MoveAgain)
     {
