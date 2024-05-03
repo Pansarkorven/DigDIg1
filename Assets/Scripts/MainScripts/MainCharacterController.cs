@@ -6,17 +6,22 @@ using UnityEngine.Animations;
 public class MainCharacterController : MonoBehaviour
 {
     [SerializeField] float horizontal;
-    public bool isRunning = false; // Flag to indicate if the player is running
-    [SerializeField] float runningSpeed = 12f; // Speed when running
-    [SerializeField] float walkingSpeed = 8f; // Speed when walking
+    public bool isRunning = false;
+    [SerializeField] float runningSpeed = 12f;
+    [SerializeField] float walkingSpeed = 8f; 
     [SerializeField] float jumpingPower = 16f;
     bool isFacingRight = true;
     [SerializeField] Vector2 boxSize = new Vector2(0.5f, 2f);
     [SerializeField] float flipDistance = 0.1f;
 
+    [SerializeField] AudioClip[] footstepSounds;
+    [SerializeField] AudioSource footstepAudioSource;
+
     public bool canDash = false;
     bool isDashing;
-    
+    int currentFootstepIndex = 0;
+
+
     public bool CanMove;
     [SerializeField] public bool IsAttack;
 
@@ -41,8 +46,37 @@ public class MainCharacterController : MonoBehaviour
     {
         Anim = GetComponent<Animator>();
         AllowsMove();
+        footstepAudioSource = GetComponent<AudioSource>();
+        if (footstepAudioSource == null)
+        {
+        }
 
         //bool value = AtC.isAttacking;
+    }
+
+   //private void PlayFootstepSound()
+   // {
+   //     if (!footstepAudioSource.isPlaying)
+   //     {
+   //         footstepAudioSource.clip = footstepSounds[currentFootstepIndex];
+   //         footstepAudioSource.Play();
+   //         currentFootstepIndex = (currentFootstepIndex + 1) % footstepSounds.Length;
+   //     }
+   // }
+
+    void PlayFootstepSound()
+    {
+        if (!footstepAudioSource.isPlaying)
+        {
+            int randomIndex = Random.Range(0, footstepSounds.Length);
+            footstepAudioSource.clip = footstepSounds[randomIndex];
+            footstepAudioSource.Play();
+        }
+    }
+
+    public void StopFootstepSound()
+    {
+        footstepAudioSource.Stop();
     }
     void Update()
     {
@@ -53,6 +87,10 @@ public class MainCharacterController : MonoBehaviour
         if (isDashing)
         {
             return;
+        }
+        if (horizontal != 0 && IsGrounded() && !isDashing)
+        {
+            PlayFootstepSound();
         }
 
         if (IsGrounded())
