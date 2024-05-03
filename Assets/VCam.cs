@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class VCam : MonoBehaviour
 {
+
     [SerializeField] GameObject virtualCam;
+
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
