@@ -15,7 +15,6 @@ public class MainCharacterController : MonoBehaviour
     [SerializeField] float flipDistance = 0.1f;
 
     [SerializeField] AudioClip[] footstepSounds;
-    [SerializeField] AudioSource footstepAudioSource;
 
     public bool canDash = false;
     bool isDashing;
@@ -36,8 +35,9 @@ public class MainCharacterController : MonoBehaviour
 
     [SerializeField] float CoyoteTime = 0.2f;
     [SerializeField] float CoyoteTimeCounter;
+    [SerializeField] AudioSource audioSource;
 
-    
+
 
     // Update is called once per frame
 
@@ -45,27 +45,23 @@ public class MainCharacterController : MonoBehaviour
     {
         Anim = GetComponent<Animator>();
         AllowsMove();
-        footstepAudioSource = GetComponent<AudioSource>();
-        if (footstepAudioSource == null)
-        {
-        }
 
         //bool value = AtC.isAttacking;
     }
 
     void PlayFootstepSound()
     {
-        if (!footstepAudioSource.isPlaying)
+        if (!audioSource.isPlaying)
         {
             int randomIndex = Random.Range(0, footstepSounds.Length);
-            footstepAudioSource.clip = footstepSounds[randomIndex];
-            footstepAudioSource.Play();
+            audioSource.clip = footstepSounds[randomIndex];
+            audioSource.Play();
         }
     }
 
     public void StopFootstepSound()
     {
-        footstepAudioSource.Stop();
+        audioSource.Stop();
     }
     void Update()
     {

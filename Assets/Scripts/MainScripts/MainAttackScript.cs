@@ -17,9 +17,12 @@ public class MainAttackScript : MonoBehaviour
     [SerializeField] Transform PlayerTransform;
     [SerializeField] float PlayerPosition;
     [SerializeField] MainCharacterController characterController;
+    [SerializeField] AudioClip[] whooshSound;
+    [SerializeField] AudioClip[] hitSound;
+    [SerializeField] AudioSource audioSource;
 
 
-    bool AttackUpCehck = false;
+    bool AttackUpCheck = false;
     [SerializeField] public bool isAttacking = false;
     [SerializeField] float attackCooldown = 0.5f;
 
@@ -33,11 +36,11 @@ public class MainAttackScript : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && !isAttacking && AttackUpCehck == true)
+        if (Input.GetButtonDown("Fire1") && !isAttacking && AttackUpCheck == true)
         {
             StartCoroutine(PerformAttackUp());
         }
-        if (Input.GetButtonDown("Fire1") && !isAttacking && AttackUpCehck == false)
+        if (Input.GetButtonDown("Fire1") && !isAttacking && AttackUpCheck == false)
         {
             StartCoroutine(PerformAttack());
         }
@@ -48,11 +51,11 @@ public class MainAttackScript : MonoBehaviour
         
         if (WhereMouse > WhenAttackUp) 
         {
-         AttackUpCehck = true;
+            AttackUpCheck = true;
         }
         else 
-        { 
-         AttackUpCehck= false;
+        {
+            AttackUpCheck = false;
         }
         if (isAttacking == true)
         {
@@ -69,7 +72,7 @@ public class MainAttackScript : MonoBehaviour
     IEnumerator PerformAttack()
     {
         isAttacking = true;
-        
+        SpelaSlumpWhooshLjud();
 
         if (IsFacingRight())
         {
@@ -89,7 +92,8 @@ public class MainAttackScript : MonoBehaviour
     IEnumerator PerformAttackUp()
     {
         isAttacking = true;
-       
+        SpelaSlumpWhooshLjud();
+
         AttackUp();
         animator.SetTrigger("AttackUp");
         yield return new WaitForSeconds(attackCooldown);
@@ -108,14 +112,42 @@ public class MainAttackScript : MonoBehaviour
                 BossHealth bossHealth = enemy.GetComponent<BossHealth>();
                 if (bossHealth != null)
                 {
+                    SpelaSlumpLjud();
                     bossHealth.TakeDamage(attackDamage);
                 }
 
                 BreakableWall breakableWall = enemy.GetComponent<BreakableWall>();
                 if (breakableWall != null)
                 {
+                    SpelaSlumpLjud();
                     breakableWall.TakeDamage(attackDamage);
                 }
+            }
+        }
+    }
+
+    void SpelaSlumpLjud()
+    {
+        if (audioSource != null && hitSound != null && hitSound.Length > 0)
+        {
+            if (!audioSource.isPlaying) 
+            { 
+                int randomIndex = Random.Range(0, hitSound.Length);
+                audioSource.clip = hitSound[randomIndex];  
+                audioSource.Play();
+            }
+        }
+    }
+
+    void SpelaSlumpWhooshLjud()
+    {
+        if (audioSource != null && whooshSound != null && whooshSound.Length > 0)
+        {
+            if (!audioSource.isPlaying)
+            {
+                int randomIndex = Random.Range(0, whooshSound.Length);
+                audioSource.clip = whooshSound[randomIndex];
+                audioSource.Play();
             }
         }
     }
@@ -129,6 +161,7 @@ public class MainAttackScript : MonoBehaviour
         {
             if (enemy != null)
             {
+                SpelaSlumpLjud();
                 BossHealth bossHealth = enemy.GetComponent<BossHealth>();
                 if (bossHealth != null)
                 {
