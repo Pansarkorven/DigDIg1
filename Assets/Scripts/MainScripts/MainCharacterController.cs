@@ -19,7 +19,6 @@ public class MainCharacterController : MonoBehaviour
 
     public bool canDash = false;
     bool isDashing;
-    int currentFootstepIndex = 0;
 
 
     public bool CanMove;
@@ -53,16 +52,6 @@ public class MainCharacterController : MonoBehaviour
 
         //bool value = AtC.isAttacking;
     }
-
-   //private void PlayFootstepSound()
-   // {
-   //     if (!footstepAudioSource.isPlaying)
-   //     {
-   //         footstepAudioSource.clip = footstepSounds[currentFootstepIndex];
-   //         footstepAudioSource.Play();
-   //         currentFootstepIndex = (currentFootstepIndex + 1) % footstepSounds.Length;
-   //     }
-   // }
 
     void PlayFootstepSound()
     {
