@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class Key : MonoBehaviour
 {
+    [SerializeField] AudioSource audiosource;
+    [SerializeField] AudioClip clip;
+    [SerializeField] SpriteRenderer sprite; 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
@@ -11,8 +14,11 @@ public class Key : MonoBehaviour
 
             if (PlayerInventory != null)
             {
-                PlayerInventory.AddKey(); // lägg nyckeln i inventory (value)
-                Destroy(gameObject); // spräng objektet
+                PlayerInventory.AddKey();
+                audiosource.PlayOneShot(clip);
+                sprite.enabled = false;
+                Destroy(gameObject, 1.14f);
+
             }
         }
     }
