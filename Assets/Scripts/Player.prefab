@@ -153,6 +153,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6882426172974226101}
+  - component: {fileID: 7286407885104126738}
   m_Layer: 10
   m_Name: Ground Check
   m_TagString: Untagged
@@ -175,6 +176,102 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8455696572011563529}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &7286407885104126738
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6951809511621789765}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 20
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &7138276837051477689
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,7 +345,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 54522424eb0d782469fdceb183fc1768, type: 3}
   - {fileID: 8300000, guid: f2dae22ffcfea52459d3febd95f400ce, type: 3}
   - {fileID: 8300000, guid: e0570a93223832841a7a4bc28cdcce9c, type: 3}
-  footstepAudioSource: {fileID: 2412426857533974089}
   canDash: 0
   CanMove: 0
   IsAttack: 0
@@ -263,6 +359,7 @@ MonoBehaviour:
     m_Bits: 12808
   CoyoteTime: 0.2
   CoyoteTimeCounter: 0
+  audioSource: {fileID: 7286407885104126738}
 --- !u!212 &7712714809512616619
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -418,7 +515,7 @@ MonoBehaviour:
     m_Bits: 512
   WallLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   attackPoint: {fileID: 3412093968709701669}
   attackPointUp: {fileID: 3495269757187194782}
   animator: {fileID: 6394862531543056149}
@@ -426,7 +523,15 @@ MonoBehaviour:
   WhenAttackUp: 1.4
   PlayerTransform: {fileID: 8455696572011563529}
   PlayerPosition: 0
-  characterController: {fileID: 0}
+  characterController: {fileID: 453211994359097470}
+  whooshSound:
+  - {fileID: 8300000, guid: 973020beee257b440a479ee4a3025eb5, type: 3}
+  - {fileID: 8300000, guid: e75eeb2da8249cb409f9475eea920526, type: 3}
+  hitSound:
+  - {fileID: 8300000, guid: 5881b579df3b5d3478708d7a3c1d17e5, type: 3}
+  - {fileID: 8300000, guid: 425e2e78a201d7946b6237a2ebf21f6d, type: 3}
+  - {fileID: 8300000, guid: 0898cc801b03b7741b13ca809e9ecfc6, type: 3}
+  audioSource: {fileID: 2412426857533974089}
   isAttacking: 0
   attackCooldown: 1.5
 --- !u!114 &2867626313333257611
