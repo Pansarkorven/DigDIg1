@@ -4,7 +4,7 @@ public class Inventory : MonoBehaviour
 {
     public bool hasKey = false;
     public bool hasRanged = false;
-    public bool hasArmor = false;
+    //public bool hasArmor = false;
     public bool hasDash = false;
     public Health playerHealth;
     public HealthBar playerHealthBar;
@@ -15,14 +15,14 @@ public class Inventory : MonoBehaviour
         hasKey = true;
     }
 
-    public bool HasKey()
-    {
-        return hasKey;
-    }
-
     public void RemoveKey()
     {
         hasKey = false;
+    }
+
+    public bool HasKey()
+    {
+        return hasKey;
     }
 
     public void AddRanged()
@@ -35,22 +35,17 @@ public class Inventory : MonoBehaviour
         return hasRanged;
     }
 
-    public void AddArmor()
-    {
-        hasArmor = true;
-        if (playerHealth != null && playerHealthBar != null)
-        {
-            playerHealth.MaxHealth = 9;
-            playerHealth.CurrentHealth = 9;
-            playerHealthBar.useSpecialHealthBar = true;
+    //public void AddArmor()
+    //{
+    //    hasArmor = true;
+    //    if (playerHealth != null && playerHealthBar != null)
+    //    {
+    //        playerHealth.MaxHealth = 9;
+    //        playerHealth.CurrentHealth = 9;
+    //        playerHealthBar.useSpecialHealthBar = true;
 
-        }
-    }
-
-    public bool HasArmor()
-    {
-        return hasArmor;
-    }
+    //    } nytt hp system detta fungerar inte längre (viktor varför)
+    //}
 
     public void AddDash()
     {
@@ -59,10 +54,5 @@ public class Inventory : MonoBehaviour
         {
             controller.canDash = true;
         }
-    }
-
-    public bool HasDash()
-    {
-        return hasDash;
     }
 }

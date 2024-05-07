@@ -22,11 +22,4 @@ public class AbilityHandler : MonoBehaviour
         }
     }
 
-    public void UseDash()
-    {
-        if (inventory.HasDash())
-        {
-            // dash kod gå här
-        }
-    }
 }
