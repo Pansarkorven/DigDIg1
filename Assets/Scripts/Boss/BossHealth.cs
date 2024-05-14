@@ -11,7 +11,6 @@ public class BossHealth : MonoBehaviour
     public BossMeleeAttack BossMeleeAttack;
     [SerializeField] private GameObject DoorPrefab;
     [SerializeField] private GameObject DashPrefab;
-    [SerializeField] private GameObject HealthSlider;
     [SerializeField] private GameObject HealthText;
     [SerializeField] private GameObject ExitPrefab;
 
@@ -27,7 +26,6 @@ public class BossHealth : MonoBehaviour
         BossMeleeAttack = GetComponent<BossMeleeAttack>();
         currentHealth = maxHealth;
         UpdateHealthUI();
-        HealthSlider.SetActive(true);
         HealthText.SetActive(true);
     }
 
@@ -56,7 +54,6 @@ public class BossHealth : MonoBehaviour
 
         DoorPrefab.SetActive(false);
         ExitPrefab.SetActive(true);
-        HealthSlider.SetActive(false);
         HealthText.SetActive(false);
 
         if (DashPrefab != null)
@@ -81,8 +78,10 @@ public class BossHealth : MonoBehaviour
 
     void UpdateHealthUI()
     {
-        healthSlider.value = currentHealth;
-        healthText.text = "Health: " + currentHealth.ToString();
+        if (healthText != null)
+        {
+            healthText.text = "Health: " + currentHealth.ToString();
+        }
     }
 
     public void TakeDamageFromExternalSource(int damage)
