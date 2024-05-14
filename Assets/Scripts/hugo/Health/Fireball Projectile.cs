@@ -13,9 +13,13 @@ public class FireballProjectile : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-
         Vector2 fireballDirection = transform.right;
+        if (transform.localScale.x < 0)// SNÄLLA RÖR INTE DETTA JAG ORKAR INTE MER
+        {// SNÄLLA RÖR INTE DETTA JAG ORKAR INTE MER
+            projectileSpeed = -5f;// SNÄLLA RÖR INTE DETTA JAG ORKAR INTE MER
+        } // SNÄLLA RÖR INTE DETTA JAG ORKAR INTE MER
         rb.velocity = fireballDirection * projectileSpeed;
+
     }
 
     void OnCollisionEnter2D(Collision2D collision)

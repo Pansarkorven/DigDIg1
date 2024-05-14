@@ -13,6 +13,7 @@ public class Armor : MonoBehaviour
     private int direction = 1; // 1 for forward, -1 for backward
     public float cycleTime = 0.15f;
 
+
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -22,10 +23,6 @@ public class Armor : MonoBehaviour
         {
             spriteRenderer.sprite = sprites[currentIndex];
             InvokeRepeating("CycleSprites", cycleTime, cycleTime);
-        }
-        else
-        {
-            Debug.LogError("No sprites assigned to SpriteCycler.");
         }
     }
 

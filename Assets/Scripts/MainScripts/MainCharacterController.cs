@@ -10,7 +10,7 @@ public class MainCharacterController : MonoBehaviour
     [SerializeField] float runningSpeed = 12f;
     [SerializeField] float walkingSpeed = 8f; 
     [SerializeField] float jumpingPower = 16f;
-    bool isFacingRight = true;
+    [SerializeField] public bool isFacingRight = true;
     [SerializeField] Vector2 boxSize = new Vector2(0.5f, 2f);
     [SerializeField] float flipDistance = 0.1f;
 
@@ -132,7 +132,6 @@ public class MainCharacterController : MonoBehaviour
 
         Flip();
 
-
     }
 
     private void FixedUpdate()
@@ -203,6 +202,8 @@ public class MainCharacterController : MonoBehaviour
             transform.position = new Vector3(currentPosition.x + (isFacingRight ? flipDistance : -flipDistance), currentPosition.y, currentPosition.z);
         }
     }
+
+
 
     private IEnumerator Dash()
     {
