@@ -69,7 +69,7 @@ public class Armor : MonoBehaviour
 
             if (PlayerInventory != null)
             {
-                PlayerInventory.AddArmor(); // lägg nyckeln i inventory (value)
+                //PlayerInventory.AddArmor(); behövs ej längre då det är nytt system och armor e skrappat så länge
                 Destroy(gameObject); // spräng objektet
             }
         }
