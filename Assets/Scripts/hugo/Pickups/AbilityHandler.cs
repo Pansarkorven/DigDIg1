@@ -13,12 +13,7 @@ public class AbilityHandler : MonoBehaviour
     {
         if (inventory.HasKey())
         {
-            Debug.Log("Använder nyckeln gggggggggggggg");
             inventory.RemoveKey();
-        }
-        else
-        {
-            Debug.Log("Du har inte nycklen");
         }
     }
 
