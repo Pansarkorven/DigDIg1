@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Ljud/Spel/Game Scenes/DeathScreen.unity
     guid: 87e6589de17981c4b80db28a4d8019c5
   - enabled: 1
-    path: Assets/Ljud/Spel/Game Scenes/prefab scene.unity
+    path: Assets/Game Scenes/prefab scene.unity
     guid: 081e081ea1ae7a246a5825861ff34aac
   m_configObjects: {}

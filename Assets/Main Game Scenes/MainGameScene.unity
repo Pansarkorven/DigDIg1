@@ -73267,11 +73267,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6601384980590664542, guid: b5d908a132de2da4080254710f67ecaf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.44
+      value: -3.7
       objectReference: {fileID: 0}
     - target: {fileID: 6601384980590664542, guid: b5d908a132de2da4080254710f67ecaf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.54
+      value: -3.6
       objectReference: {fileID: 0}
     - target: {fileID: 6601384980590664542, guid: b5d908a132de2da4080254710f67ecaf, type: 3}
       propertyPath: m_LocalPosition.z
@@ -73304,6 +73304,10 @@ PrefabInstance:
     - target: {fileID: 6601384980590664542, guid: b5d908a132de2da4080254710f67ecaf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7211785694484033849, guid: b5d908a132de2da4080254710f67ecaf, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9113943438070410594, guid: b5d908a132de2da4080254710f67ecaf, type: 3}
       propertyPath: m_Enabled
@@ -127008,6 +127012,10 @@ PrefabInstance:
       propertyPath: BossHitbox
       value: 
       objectReference: {fileID: 1357010758}
+    - target: {fileID: 2475377232357916747, guid: f9bed55e2a0c552489a7e43e043826da, type: 3}
+      propertyPath: attackDamage
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4409741759618851246, guid: f9bed55e2a0c552489a7e43e043826da, type: 3}
       propertyPath: player
       value: 

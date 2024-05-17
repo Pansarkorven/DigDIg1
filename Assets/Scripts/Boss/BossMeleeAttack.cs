@@ -24,12 +24,13 @@ public class BossMeleeAttack : MonoBehaviour
     {
         bossMove = GetComponent<BossFollowPlayer>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
+       
     }
 
     void Start()
     {
         StartCoroutine(AttackRoutine());
-        StartCoroutine(RepeatedDashCoroutine());
+        //StartCoroutine(RepeatedDashCoroutine());
     }
 
     IEnumerator AttackRoutine()
@@ -141,10 +142,20 @@ public class BossMeleeAttack : MonoBehaviour
                 Debug.Log("it wokr");
                 if (playerCollider.IsTouching(normalAttackTrigger))
                 {
-                    playerCollider.GetComponent<Health>().TakeDamage(attackDamage);
-                    Debug.Log(playerCollider + " is hit!");
+                    Health playerHealth = playerCollider.GetComponent<Health>();
+                    if (playerHealth != null) 
+                    {
+                        playerCollider.GetComponent<Health>().TakeDamage(attackDamage);
+                        Debug.Log(playerCollider.name + " is hit!");
+                    }
+                    else
+                    {
+                        Debug.LogWarning(playerCollider.name + " does not have a Health component!");
+                    }
+                
                 }
             }
+
         }
         yield return new WaitForSeconds(1);
 
