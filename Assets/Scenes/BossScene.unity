@@ -602,7 +602,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 289b5636d2442f04d9da6183bbefa98a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Animation: {fileID: 0}
+  Anim: {fileID: 0}
+  AnimHealth: {fileID: 0}
   MaxHealth: 6
   CurrentHealth: 6
   Player: {fileID: 798964408}

@@ -11,7 +11,7 @@ public class FireballAttack : MonoBehaviour
     public BossHealth bossHealth;
     [SerializeField] float lastAttackTime;
     [SerializeField] float attackCooldown = 5f;
-    [SerializeField] AudioClip attackSound; // Sound to play when attacking
+    [SerializeField] AudioClip attackSound;
     [SerializeField] AudioSource audioSource;
 
     void Start()
@@ -19,7 +19,7 @@ public class FireballAttack : MonoBehaviour
         bossHealth = GetComponent<BossHealth>();
         inventory = playerObject.GetComponent<Inventory>();
         lastAttackTime = -attackCooldown;
-        audioSource = GetComponent<AudioSource>(); // Get AudioSource component
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()

@@ -48,7 +48,7 @@ public class BossMeleeAttack : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(10f); // Wait for 30 seconds
+            yield return new WaitForSeconds(1000f); // Wait for 30 seconds
             StartDash();
         }
     }
@@ -138,6 +138,7 @@ public class BossMeleeAttack : MonoBehaviour
         {
             foreach (Collider2D playerCollider in hitPlayers)
             {
+                Debug.Log("it wokr");
                 if (playerCollider.IsTouching(normalAttackTrigger))
                 {
                     playerCollider.GetComponent<Health>().TakeDamage(attackDamage);

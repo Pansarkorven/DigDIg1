@@ -10,7 +10,7 @@ public class MainCharacterController : MonoBehaviour
     [SerializeField] float runningSpeed = 12f;
     [SerializeField] float walkingSpeed = 8f; 
     [SerializeField] float jumpingPower = 16f;
-    bool isFacingRight = true;
+    [SerializeField] public bool isFacingRight = true;
     [SerializeField] Vector2 boxSize = new Vector2(0.5f, 2f);
     [SerializeField] float flipDistance = 0.1f;
 
@@ -132,7 +132,6 @@ public class MainCharacterController : MonoBehaviour
 
         Flip();
 
-
     }
 
     private void FixedUpdate()
@@ -142,7 +141,6 @@ public class MainCharacterController : MonoBehaviour
             return;
         }
 
-        // Calculate movement speed
         float currentSpeed = isRunning ? runningSpeed : walkingSpeed;
         rb.velocity = new Vector2(horizontal * currentSpeed, rb.velocity.y);
     }
@@ -190,19 +188,19 @@ public class MainCharacterController : MonoBehaviour
         {
             isFacingRight = !isFacingRight;
 
-            // Store the current position
+
             Vector3 currentPosition = transform.position;
 
-            // Flip the scale
             Vector3 localScale = transform.localScale;
             localScale.x *= -1f;
             transform.localScale = localScale;
 
-            // Adjust the position to reflect the flip
-            // Adjust this value based on how much you want the character to move when flipping
+
             transform.position = new Vector3(currentPosition.x + (isFacingRight ? flipDistance : -flipDistance), currentPosition.y, currentPosition.z);
         }
     }
+
+
 
     private IEnumerator Dash()
     {
