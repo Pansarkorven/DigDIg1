@@ -578,11 +578,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &308942399 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 116617448621965682, guid: b5d908a132de2da4080254710f67ecaf, type: 3}
-  m_PrefabInstance: {fileID: 2030277727}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &363043626
 GameObject:
   m_ObjectHideFlags: 0
@@ -90228,22 +90223,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1125747202643625562, guid: 48423a773eb429d499dc970dde2f804b, type: 3}
   m_PrefabInstance: {fileID: 1058053143}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &804058704 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5608177151394349038, guid: b5d908a132de2da4080254710f67ecaf, type: 3}
-  m_PrefabInstance: {fileID: 2030277727}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &804058705 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7992634515136958404, guid: b5d908a132de2da4080254710f67ecaf, type: 3}
-  m_PrefabInstance: {fileID: 2030277727}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 804058704}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67e6239498bde0c41a5c356aa1de7ed3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &805852057
 GameObject:
   m_ObjectHideFlags: 3
@@ -92780,26 +92759,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 652922307630785756, guid: b5d908a132de2da4080254710f67ecaf, type: 3}
-      propertyPath: projectilePrefab
-      value: 
-      objectReference: {fileID: 2015845470088902174, guid: 2daff99a53c8b6d46a40006433b76d8a, type: 3}
-    - target: {fileID: 2922377082886437161, guid: b5d908a132de2da4080254710f67ecaf, type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 804058705}
-    - target: {fileID: 2922377082886437161, guid: b5d908a132de2da4080254710f67ecaf, type: 3}
-      propertyPath: projectile
-      value: 
-      objectReference: {fileID: 2015845470088902174, guid: 2daff99a53c8b6d46a40006433b76d8a, type: 3}
-    - target: {fileID: 2922377082886437161, guid: b5d908a132de2da4080254710f67ecaf, type: 3}
-      propertyPath: firePosition
-      value: 
-      objectReference: {fileID: 308942399}
-    - target: {fileID: 2922377082886437161, guid: b5d908a132de2da4080254710f67ecaf, type: 3}
-      propertyPath: playerObject
-      value: 
-      objectReference: {fileID: 804058704}
     - target: {fileID: 4061151647970723429, guid: b5d908a132de2da4080254710f67ecaf, type: 3}
       propertyPath: TxtPrefab1
       value: 
@@ -92872,10 +92831,6 @@ PrefabInstance:
       propertyPath: TxtPrefabNr4
       value: 
       objectReference: {fileID: 460317398}
-    - target: {fileID: 9113943438070410594, guid: b5d908a132de2da4080254710f67ecaf, type: 3}
-      propertyPath: whooshSound.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: cb0b32a25de860e49b66610387018111, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
