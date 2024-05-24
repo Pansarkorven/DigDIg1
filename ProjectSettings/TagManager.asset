@@ -16,7 +16,7 @@ TagManager:
   - UI
   - Player
   - Wall
-  - Top
+  - CameraLayer
   - EnemyLayer
   - PLayerUi
   - BossUi

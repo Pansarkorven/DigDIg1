@@ -132,6 +132,7 @@ public class MainCharacterController : MonoBehaviour
 
         Flip();
 
+        Mathf.Clamp(rb.velocity.y, -10, 8);
     }
 
     private void FixedUpdate()
