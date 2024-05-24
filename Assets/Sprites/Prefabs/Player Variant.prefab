@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8911829766243870282}
   - component: {fileID: 6100908260867545896}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: InUseRange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,6 +120,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5818444927481691189, guid: 3ca73c034757fc34ba79629d1022f044, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5818444927481691189, guid: 3ca73c034757fc34ba79629d1022f044, type: 3}
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 4750636656272153854}
@@ -189,11 +193,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8455696572011563529, guid: 3ca73c034757fc34ba79629d1022f044, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -33.1
+      value: -125.1
       objectReference: {fileID: 0}
     - target: {fileID: 8455696572011563529, guid: 3ca73c034757fc34ba79629d1022f044, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.1
+      value: 35.82
       objectReference: {fileID: 0}
     - target: {fileID: 8455696572011563529, guid: 3ca73c034757fc34ba79629d1022f044, type: 3}
       propertyPath: m_LocalPosition.z
@@ -205,15 +209,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8455696572011563529, guid: 3ca73c034757fc34ba79629d1022f044, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8455696572011563529, guid: 3ca73c034757fc34ba79629d1022f044, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8455696572011563529, guid: 3ca73c034757fc34ba79629d1022f044, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8455696572011563529, guid: 3ca73c034757fc34ba79629d1022f044, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -230,7 +234,8 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 2412426857533974089, guid: 3ca73c034757fc34ba79629d1022f044, type: 3}
     - {fileID: 1672781643227356588, guid: 3ca73c034757fc34ba79629d1022f044, type: 3}
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7954031837935856761, guid: 3ca73c034757fc34ba79629d1022f044, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 8455696572011563529, guid: 3ca73c034757fc34ba79629d1022f044, type: 3}
       insertIndex: -1

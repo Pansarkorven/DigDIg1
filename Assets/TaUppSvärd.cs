@@ -17,7 +17,7 @@ public class TaUppSvärd : MonoBehaviour
             AttackScript.enabled = true;
             audiosource.PlayOneShot(clip);
             sprite.enabled = false;
-            Destroy(gameObject, 1.14f);
+            Destroy(gameObject, 0.5F);
         }
     }
 }
