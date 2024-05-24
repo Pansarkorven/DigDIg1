@@ -129,7 +129,7 @@ public class BossMeleeAttack : MonoBehaviour
         Anim.SetTrigger("BossAttacking");
 
        
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1.5f);
 
   
         Collider2D[] hitPlayers = Physics2D.OverlapCircleAll(normalAttackTrigger.transform.position, attackRange, playerLayer);

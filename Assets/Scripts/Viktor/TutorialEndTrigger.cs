@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TutorialEndTrigger : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class TutorialEndTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            SceneManagerFadeOut.instance.TransitionToScene(sceneName);
+            SceneManager.LoadScene("MainGame");
         }
     }
 }

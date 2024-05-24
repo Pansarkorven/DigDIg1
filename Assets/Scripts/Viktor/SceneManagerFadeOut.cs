@@ -10,7 +10,7 @@ public class SceneManagerFadeOut : MonoBehaviour
     public static SceneManagerFadeOut instance;
     public Image fadeImage;
     public TextMeshProUGUI loadingText;
-    public float fadeDuration = 1.0f;
+    public float fadeDuration = 4.0f;
 
     private void Awake()
     {
@@ -27,7 +27,8 @@ public class SceneManagerFadeOut : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(FadeIn());
+        // Ensure the image is initially disabled
+        fadeImage.gameObject.SetActive(false);
     }
 
     public void TransitionToScene(string sceneName)
@@ -37,7 +38,7 @@ public class SceneManagerFadeOut : MonoBehaviour
 
     private IEnumerator FadeIn()
     {
-        fadeImage.gameObject.SetActive(true); // Enable the image
+        fadeImage.gameObject.SetActive(true);
 
         float elapsedTime = 0f;
         Color imageColor = fadeImage.color;
@@ -57,12 +58,12 @@ public class SceneManagerFadeOut : MonoBehaviour
             yield return null;
         }
 
-        fadeImage.gameObject.SetActive(false); // Disable the image
+        fadeImage.gameObject.SetActive(false); // Disable the image after fade-in
     }
 
     private IEnumerator FadeOutAndLoadScene(string sceneName)
     {
-        fadeImage.gameObject.SetActive(true); // Enable the image
+        fadeImage.gameObject.SetActive(true);
 
         float elapsedTime = 0f;
         Color imageColor = fadeImage.color;
@@ -82,7 +83,7 @@ public class SceneManagerFadeOut : MonoBehaviour
             yield return null;
         }
 
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene("MainGame");
 
         // Wait for the scene to load, then fade in
         yield return new WaitUntil(() => SceneManager.GetActiveScene().name == sceneName);
