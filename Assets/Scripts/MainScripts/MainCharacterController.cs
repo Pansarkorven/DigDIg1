@@ -13,6 +13,7 @@ public class MainCharacterController : MonoBehaviour
     [SerializeField] public bool isFacingRight = true;
     [SerializeField] Vector2 boxSize = new Vector2(0.5f, 2f);
     [SerializeField] float flipDistance = 0.1f;
+    public bool GroundTutched;
 
     [SerializeField] AudioClip[] footstepSounds;
 
@@ -48,7 +49,11 @@ public class MainCharacterController : MonoBehaviour
 
         //bool value = AtC.isAttacking;
     }
-
+    private void Awake()
+    {
+        
+        LateUpdate();
+    }
     void PlayFootstepSound()
     {
         if (!audioSource.isPlaying)
@@ -165,6 +170,7 @@ public class MainCharacterController : MonoBehaviour
     private bool IsGrounded()
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+        GroundTutched = true;
     }
 
     
@@ -217,15 +223,13 @@ public class MainCharacterController : MonoBehaviour
         canDash = true;
 
     }
+    private void LateUpdate()
+    {
+        
+        if (!(GroundTutched = true))
+        {
+            Anim.SetTrigger("GroundTutch");
+        }
+    }
 
-    //private void Flip()
-    //{
-    //    if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
-    //    {
-    //        isFacingRight = !isFacingRight;
-    //        Vector3 localScale = transform.localScale;
-    //        localScale.x *= -1f;
-    //        transform.localScale = localScale;
-    //    }
-    //}
 }

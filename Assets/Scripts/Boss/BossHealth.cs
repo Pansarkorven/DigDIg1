@@ -12,6 +12,7 @@ public class BossHealth : MonoBehaviour
     [SerializeField] private GameObject DoorPrefab;
     [SerializeField] private GameObject DashPrefab;
     [SerializeField] private GameObject HealthText;
+    [SerializeField] private GameObject HealthText2;
     [SerializeField] private GameObject ExitPrefab;
 
     [SerializeField] float rageThresholdPercentage = 0.3f; 
@@ -27,6 +28,7 @@ public class BossHealth : MonoBehaviour
         currentHealth = maxHealth;
         UpdateHealthUI();
         HealthText.SetActive(true);
+        HealthText2.SetActive(true);
     }
 
     public void TakeDamage(int damage)
@@ -55,6 +57,7 @@ public class BossHealth : MonoBehaviour
         DoorPrefab.SetActive(false);
         ExitPrefab.SetActive(true);
         HealthText.SetActive(false);
+        HealthText2.SetActive(false);
 
         if (DashPrefab != null)
         {
